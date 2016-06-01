@@ -144,7 +144,7 @@ Implementation:
 bool sortGenJetFunc(reco::GenJet i, reco::GenJet j){ return (i.pt()>j.pt()); }
 
 // Add the data formats
-#include "UfHMuMuCode/UFDiMuonsAnalyzer/interface/DataFormats.h"
+#include "BoostedZ/UFDiMuonsAnalyzer/interface/DataFormats.h"
 
 // general 
 double const PDG_MASS_Z  = 91.1876;//GeV/c2
