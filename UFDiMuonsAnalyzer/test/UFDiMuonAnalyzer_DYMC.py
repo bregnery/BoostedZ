@@ -34,11 +34,11 @@ from Configuration.AlCa.autoCond import autoCond
 # /////////////////////////////////////////////////////////////
 
 isData = False
-sname = "Name of mc sample. Used to name the output files."
+sname = "DYtestMC"
 sdir =  "NO DAS DIR. Locally created samples."               ### You don't need to worry about this.
 sjsonfile = "/no/json/for/mc"
-sglobaltag = "YOUR_GLOBAL_TAG"                               ### Put the correct global tag here
-sfilename = "file:/LOCATION/OF/SAMPLE/SAMPLENAME.root"       ### The MINIAOD root file you want to run over
+sglobaltag = "POSTLS170_V5"                               ### Put the correct global tag here
+sfilename = "file:/cms/data/store/mc/Spring14miniaod/DYJetsToLL_M-50_13TeV-madgraph-pythia8/MINIAODSIM/PU20bx25_POSTLS170_V5-v1/00000/029EA4C3-A007-E411-BE0B-D4AE529D9537.root"   ### The MINIAOD root file you want to run over
 
 # /////////////////////////////////////////////////////////////
 # Set up and run the analyzer
