@@ -19,7 +19,8 @@ Then, clone this git repository and compile CMSSW
     scram b
     cmsenv
 
-There are 5 directories in this repository: ExcitedQuark, interface, plugins, python, and test.
-The programs that input data and monte carlo files into the stage 1 ntuplizer are located in the test directory.
-The stage 1 ntuplizer is located in the plugins directory.
+There are 3 directories in this repository: ExcitedQuark and UFDiMuonAnalyzer.
+The UFDiMuonAnalyzer contains an altered version of the stage 1 ntuplizer used in the UF Hmumu studies. 
+Please note that this was not used in our study, it is merely here for completeness sake.
 The ExcitedQuark directory contains the programs used to generate local excited quark monte carlo samples.
+The
