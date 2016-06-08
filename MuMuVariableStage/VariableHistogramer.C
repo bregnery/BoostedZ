@@ -40,6 +40,27 @@ void VariableHistogramer (TString inputFileName,TString outputFileName, bool isD
   TH1F* dimuonMassHist = new TH1F("dimuonMassHist","",50,110,160);
   setHistTitles(dimuonMassHist,"M(#mu#mu) [GeV/c^{2}]","Events");
   dimuonMassHist->Sumw2();
+<<<<<<< HEAD
+=======
+                    
+  // Plots invariant Dijet Mass
+  TH1F* diJetMassHist = new TH1F("diJetMassHist","",50,0,200);
+  setHistTitles(diJetMassHist,"M(2Jet) [GeV/c^{2}]","Events");
+  diJetMassHist->SetStats(1);
+  diJetMassHist->Sumw2();
+  
+  // Plots the diJet Eta
+  TH1F* diJetEtaHist = new TH1F("diJetEtaHist","",50,-6,6);
+  setHistTitles(diJetEtaHist,"#eta","Events");
+  diJetEtaHist->SetStats(1);
+  diJetEtaHist->Sumw2();
+
+  // Plots the angle between V and H
+  TH1F* VHphiHist = new TH1F("VHphiHist","",50,0,7);
+  setHistTitles(VHphiHist,"#phi","Events");
+  VHphiHist->SetStats(1);
+  VHphiHist->Sumw2();
+>>>>>>> ce97551252c639f351a9b0d3bce598be6a06bb5a
 
   // Plots the Phi star variable
   TH1F* phiStarHist = new TH1F("phiStarHist","",50,0,1);
@@ -53,11 +74,25 @@ void VariableHistogramer (TString inputFileName,TString outputFileName, bool isD
   phiStarCheckHist->SetStats(1);
   phiStarHist->Sumw2();
 
+<<<<<<< HEAD
   // Plot the 1/mumuPt
   TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","",100,0,1);
   setHistTitles(inverseDiMuPtHist,"1/Pt(#mu#mu) [c/GeV]","Events");
   inverseDiMuPtHist->SetStats(1);
   inverseDiMuPtHist->Sumw2();
+=======
+  // Plots the Zeppenfeld1 Variable
+  TH1F* Zeppenfeld1Hist = new TH1F("Zeppenfeld1Hist","",50,-6,6);
+  setHistTitles(Zeppenfeld1Hist,"eta_{1} *","Events");
+  Zeppenfeld1Hist->SetStats(1);
+  Zeppenfeld1Hist->Sumw2();
+
+  // Plots the Zeppenfeld2 Variable
+  TH1F* Zeppenfeld2Hist = new TH1F("Zeppenfeld2Hist","",50,-6,6);
+  setHistTitles(Zeppenfeld2Hist,"eta_{2} *","Events");
+  Zeppenfeld2Hist->SetStats(1);
+  Zeppenfeld2Hist->Sumw2();
+>>>>>>> ce97551252c639f351a9b0d3bce598be6a06bb5a
 
   ////////////////////////////
   Double_t MASS_MUON = 0.105658367;    //GeV/c2

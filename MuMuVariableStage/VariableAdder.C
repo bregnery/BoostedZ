@@ -128,13 +128,15 @@ void VariableAdder (TString inputFileName,TString outputFileName, bool isData, b
   float phiStarCheck;
   TBranch *phiStarCheckBranch = outTree->Branch("phiStarCheck", &phiStarCheck, "phiStarCheck/F");
 
-  // Add a branch for 1/mumuPT
-  float inverseDiMuPt;
-  TBranch *inverseDiMuPtBranch = outTree->Branch("inverseDiMuPt", &inverseDiMuPtBranch, "inverseDiMuPt/F");
+  // Add branchs for the Zeppenfeld variables
+  float Zeppenfeld1 = 0;
+  TBranch *Zeppenfeld1Branch = outTree->Branch("Zeppenfeld1", &Zeppenfeld1, "Zeppenfeld1/F");
+  float Zeppenfeld2 = 0;
+  TBranch *Zeppenfeld2Branch = outTree->Branch("Zeppenfeld2", &Zeppenfeld2, "Zeppenfeld2/F");  
 
   // number of events
   unsigned nEvents = tree->GetEntries();
-  unsigned reportEach = 100;
+  unsigned reportEach = 100000;
   if (nEvents/100000 > reportEach)
 	reportEach = nEvents/100000;
 
@@ -158,7 +160,6 @@ void VariableAdder (TString inputFileName,TString outputFileName, bool isData, b
            reco1 = tmpMuon;
        }
        
-
        ///////////////
        // Calculate new variables
 
