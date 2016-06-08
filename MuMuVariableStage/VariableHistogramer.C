@@ -53,9 +53,15 @@ void VariableHistogramer (TString inputFileName,TString outputFileName, bool isD
   phiStarCheckHist->SetStats(1);
   phiStarHist->Sumw2();
 
+  // Plot the Dimuon Pt
+  TH1F* dimuonPtHist = new TH1F("dimuonPtHist","",100,0,800);
+  setHistTitles(dimuonPtHist,"P_{T}(#mu#mu) [GeV/c]","Events");
+  dimuonPtHist->SetStats(1);
+  dimuonPtHist->Sumw2();
+
   // Plot the 1/mumuPt
-  TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","",100,0,1);
-  setHistTitles(inverseDiMuPtHist,"1/Pt(#mu#mu) [c/GeV]","Events");
+  TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","",100,0,0.02);
+  setHistTitles(inverseDiMuPtHist,"1/P_{T}(#mu#mu) [c/GeV]","Events");
   inverseDiMuPtHist->SetStats(1);
   inverseDiMuPtHist->Sumw2();
 
@@ -142,13 +148,17 @@ void VariableHistogramer (TString inputFileName,TString outputFileName, bool isD
       reco1 = reco2;
       reco1 = tmpMuon;
     }
-                                                                                                                          
+
+    // Error testing for inverse DiMu Pt
+    inverseDiMuPt = 1 / recoCandPt;
+    
     /////////////////////
     // Fill Histograms
     dimuonMassHist->Fill(recoCandMass);
     phiStarHist->Fill(phiStar);
     phiStarCheckHist->Fill(phiStarCheck);
-    inverseDiMuPtHist->Fill(inverseDiMuPtHist);
+    dimuonPtHist->Fill(recoCandPt);
+    inverseDiMuPtHist->Fill(inverseDiMuPt);
   }
 
   TFile* outFile = new TFile(outputFileName,"RECREATE");
@@ -156,6 +166,7 @@ void VariableHistogramer (TString inputFileName,TString outputFileName, bool isD
   dimuonMassHist->Write();
   phiStarHist->Write();
   phiStarCheckHist->Write();
+  dimuonPtHist->Write();
   inverseDiMuPtHist->Write();
   outFile->Close();
 }

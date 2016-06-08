@@ -185,8 +185,8 @@ void VariableAdder (TString inputFileName,TString outputFileName, bool isData, b
        phiStarCheckBranch->Fill();
 
        // calculate and fill the 1/mumuPt variable
-       inverseDiMuPt = 1;
-       inverseDiMuPt = 1/recoCandPt;
+       inverseDiMuPt = 1; //If there is a value of 1 in the plot, there is an error
+       inverseDiMuPt = 1 / recoCandPt;
        inverseDiMuPtBranch->Fill();
   
   }
