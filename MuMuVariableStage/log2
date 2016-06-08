@@ -1,0 +1,91 @@
+
+Processing runHist.C...
+Info in <TUnixSystem::ACLiC>: creating shared library /scratch/osg/bregnery/VariableStage/CMSSW_7_4_2/src/UFhmumuVariableStage/./VariableHistogramer_C.so
+Warning in <TH1F::Sumw2>: Sum of squares of weights structure already created
+Analyzing filename: ggHmumu_13TeV_stageVar.root
+isSignal
+Event: 0
+Warning in <TROOT::Append>: Replacing existing TH1: dimuonMassHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: diJetMassHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: diJetEtaHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: VHphiHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: phiStarHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: phiStarCheckHist (Potential memory leak).
+Warning in <TH1F::Sumw2>: Sum of squares of weights structure already created
+Analyzing filename: VBFHmumu_13TeV_stageVar.root
+isSignal
+Event: 0
+Warning in <TROOT::Append>: Replacing existing TH1: dimuonMassHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: diJetMassHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: diJetEtaHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: VHphiHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: phiStarHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: phiStarCheckHist (Potential memory leak).
+Warning in <TH1F::Sumw2>: Sum of squares of weights structure already created
+Analyzing filename: VHmumu_13TeV_stageVar.root
+isSignal
+Event: 0
+Warning in <TROOT::Append>: Replacing existing TH1: dimuonMassHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: diJetMassHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: diJetEtaHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: VHphiHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: phiStarHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: phiStarCheckHist (Potential memory leak).
+Warning in <TH1F::Sumw2>: Sum of squares of weights structure already created
+Analyzing filename: ttHmumu_13TeV_stageVar.root
+isSignal
+Event: 0
+Event: 100000
+Event: 200000
+Warning in <TROOT::Append>: Replacing existing TH1: dimuonMassHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: diJetMassHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: diJetEtaHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: VHphiHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: phiStarHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: phiStarCheckHist (Potential memory leak).
+Warning in <TH1F::Sumw2>: Sum of squares of weights structure already created
+Analyzing filename: DY_13TeV_stageVar.root
+Event: 0
+Event: 100000
+Event: 200000
+Event: 300000
+Event: 400000
+Event: 500000
+Event: 600000
+Event: 700000
+Event: 800000
+Event: 900000
+Event: 1000000
+Event: 1100000
+Event: 1200000
+Event: 1300000
+Event: 1400000
+Event: 1500000
+Event: 1600000
+Event: 1700000
+Event: 1800000
+Event: 1900000
+Event: 2000000
+Event: 2100000
+Event: 2200000
+Event: 2300000
+Event: 2400000
+Event: 2500000
+Event: 2600000
+Event: 2700000
+Event: 2800000
+Event: 2900000
+Event: 3000000
+Event: 3100000
+Event: 3200000
+Event: 3300000
+Warning in <TROOT::Append>: Replacing existing TH1: dimuonMassHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: diJetMassHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: diJetEtaHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: VHphiHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: phiStarHist (Potential memory leak).
+Warning in <TROOT::Append>: Replacing existing TH1: phiStarCheckHist (Potential memory leak).
+Warning in <TH1F::Sumw2>: Sum of squares of weights structure already created
+Analyzing filename: TT_13TeV_stageVar.root
+Event: 0
+Event: 100000
