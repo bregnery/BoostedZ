@@ -53,13 +53,18 @@ void VariableAdder (TString inputFileName,TString outputFileName, bool isData, b
   // If the root file came from Andrew's crab script
   // one additional step is needed
   TChain * tree = nullptr;
+  TChain * metadata = nullptr;
   if (isCrab){
     tree = new TChain("dimuons/tree");
     tree -> Add(inputFileName);
+    metadata = new TChain("dimuons/metadata");
+    metadata -> Add(inputFileName);
   }
   else {
     tree = new TChain("tree");
     tree -> Add(inputFileName);
+    metadata = new TChain("metadata");
+    metadata -> Add(inputFileName);
   }
 
   std::cout << "Entries in the tree: " << tree -> GetEntries() << std::endl;
@@ -116,8 +121,10 @@ void VariableAdder (TString inputFileName,TString outputFileName, bool isData, b
   std::cout << "======== Created Output File object ========" << std::endl;
   outFile->cd();
   TTree* outTree = new TTree("outTree","RECREATE");
+  TTree* outMetadata = new TTree("outMetadata","RECREATE");
   std::cout << "======== Created outTree object ========" << std::endl;
   outTree = tree->CloneTree();
+  outMetadata = metadata->CloneTree();
   std::cout << "======== Made Output File! ========" << std::endl;
   
   // Add a branch for the phiStar variable
@@ -158,39 +165,46 @@ void VariableAdder (TString inputFileName,TString outputFileName, bool isData, b
            reco1 = tmpMuon;
        }
        
-       ///////////////
-       // Calculate new variables
-
-       // calculate and fill the phiStar variable
-       phiStar = 0;
-       float muonDelPhi = TMath::Abs(reco1.phi - reco2.phi);
-       if(muonDelPhi > TMath::Pi()){
-	  muonDelPhi = 2*TMath::Pi() - muonDelPhi;
-       }
-       //cout << "muonDelPhi: " << muonDelPhi << endl;
-       float phiACOP = TMath::Pi() - muonDelPhi;
-       //cout << "phiACOP: " << phiACOP << endl;
-       float thetaStarEta = TMath::ACos(TMath::TanH((reco1.eta - reco2.eta)/2));
-       //cout << "thetaStarEta: " << thetaStarEta << endl;
-       phiStar = TMath::Tan(phiACOP/2)*TMath::Sin(thetaStarEta);
-       //cout << "phiStar: " << phiStar << endl;
-       phiStarBranch->Fill();
+       // Selection Criteria
        
-       // phi star cross check
-       phiStarCheck = 0;
-       float tanDelPhi = TMath::Tan(phiACOP/2);
-       float delEta = TMath::Abs((reco1.eta - reco2.eta)/2);
-       float tanhDelEta = TMath::TanH(delEta);
-       phiStarCheck = tanDelPhi*(TMath::Sqrt(1 - (tanhDelEta*tanhDelEta)));
-       phiStarCheckBranch->Fill();
-
-       // calculate and fill the 1/mumuPt variable
-       inverseDiMuPt = 1; //If there is a value of 1 in the plot, there is an error
-       inverseDiMuPt = 1 / recoCandPt;
-       inverseDiMuPtBranch->Fill();
+       // Dimuon Mass cut
+       if(recoCandMass >= 60 && recoCandMass <= 120){
   
+          ///////////////
+          // Calculate new variables
+
+          // calculate and fill the phiStar variable
+          phiStar = 0;
+          float muonDelPhi = TMath::Abs(reco1.phi - reco2.phi);
+          if(muonDelPhi > TMath::Pi()){
+	     muonDelPhi = 2*TMath::Pi() - muonDelPhi;
+          }
+          //cout << "muonDelPhi: " << muonDelPhi << endl;
+          float phiACOP = TMath::Pi() - muonDelPhi;
+          //cout << "phiACOP: " << phiACOP << endl;
+          float thetaStarEta = TMath::ACos(TMath::TanH((reco1.eta - reco2.eta)/2));
+          //cout << "thetaStarEta: " << thetaStarEta << endl;
+          phiStar = TMath::Tan(phiACOP/2)*TMath::Sin(thetaStarEta);
+          //cout << "phiStar: " << phiStar << endl;
+          phiStarBranch->Fill();
+       
+          // phi star cross check
+          phiStarCheck = 0;
+          float tanDelPhi = TMath::Tan(phiACOP/2);
+          float delEta = TMath::Abs((reco1.eta - reco2.eta)/2);
+          float tanhDelEta = TMath::TanH(delEta);
+          phiStarCheck = tanDelPhi*(TMath::Sqrt(1 - (tanhDelEta*tanhDelEta)));
+          phiStarCheckBranch->Fill();
+
+          // calculate and fill the 1/mumuPt variable
+          inverseDiMuPt = 1; //If there is a value of 1 in the plot, there is an error
+          inverseDiMuPt = 1 / recoCandPt;
+          inverseDiMuPtBranch->Fill();
+  
+       }
   }
   outTree->Write();
+  outMetadata->Write();
   outFile->Close();
 }
 

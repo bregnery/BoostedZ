@@ -18,18 +18,17 @@
 #include <vector>
 #include "src/DataFormats.h"
 #include "src/helpers.h"
+#include "src/SampleClass.h"
+#include "src/SampleClass.cxx"
 #include "Math/Functor.h"
 #include "Math/GSLMinimizer1D.h"
 
-void VariableHistogramer (TString inputFileName,TString outputFileName, bool isData, bool isSignal, bool isDY)
+void VariableHistogramer (TString inputFileName,TString outputFileName, bool isData, bool isSignal)
 {
   using namespace std;
 
   ///////////////////
   // Configuration
-
-  // Weighting for Drell Yan
-  float weight = 0.03;
 
   ///////////////////////////
   // Output Histograms
@@ -37,7 +36,7 @@ void VariableHistogramer (TString inputFileName,TString outputFileName, bool isD
   setStyle();
           
   // Plots Mass of the Dimuons
-  TH1F* dimuonMassHist = new TH1F("dimuonMassHist","",50,110,160);
+  TH1F* dimuonMassHist = new TH1F("dimuonMassHist","",50,60,120);
   setHistTitles(dimuonMassHist,"M(#mu#mu) [GeV/c^{2}]","Events");
   dimuonMassHist->Sumw2();
 
@@ -54,7 +53,7 @@ void VariableHistogramer (TString inputFileName,TString outputFileName, bool isD
   phiStarHist->Sumw2();
 
   // Plot the Dimuon Pt
-  TH1F* dimuonPtHist = new TH1F("dimuonPtHist","",100,0,800);
+  TH1F* dimuonPtHist = new TH1F("dimuonPtHist","",100,0,2000);
   setHistTitles(dimuonPtHist,"P_{T}(#mu#mu) [GeV/c]","Events");
   dimuonPtHist->SetStats(1);
   dimuonPtHist->Sumw2();
@@ -78,6 +77,8 @@ void VariableHistogramer (TString inputFileName,TString outputFileName, bool isD
   
   TChain * tree = new TChain("tree");
   tree->Add(inputFileName);
+  TChain * metadata = new TChain("metadata");
+  metadata->Add(inputFileName);
 
   // These are the names of the muons (See src/DataFormats.h for definitions!)
   _MuonInfo reco1, reco2;
@@ -129,6 +130,14 @@ void VariableHistogramer (TString inputFileName,TString outputFileName, bool isD
   if (nEvents/100000 > reportEach)
      reportEach = nEvents/100000;
 
+  // Calculate Scale Factors for MC
+  double scaleFactor = 1;
+  double luminosity = 2169;
+  if (isData == false){
+	Sample MCsample = Sample(inputFileName, outputFileName, tree, metadata);
+	scaleFactor = MCsample.getScaleFactor(luminosity);
+  } 
+
   ///////////////////////////////
   // Event Loop
         
@@ -148,17 +157,24 @@ void VariableHistogramer (TString inputFileName,TString outputFileName, bool isD
       reco1 = reco2;
       reco1 = tmpMuon;
     }
-
-    // Error testing for inverse DiMu Pt
-    inverseDiMuPt = 1 / recoCandPt;
     
     /////////////////////
-    // Fill Histograms
-    dimuonMassHist->Fill(recoCandMass);
-    phiStarHist->Fill(phiStar);
-    phiStarCheckHist->Fill(phiStarCheck);
-    dimuonPtHist->Fill(recoCandPt);
-    inverseDiMuPtHist->Fill(inverseDiMuPt);
+    // Selection Criteria
+
+    // Dimuon Mass Selection
+    if (recoCandMass >= 60 && recoCandMass <= 120){
+
+       // Error testing for inverse DiMu Pt
+       inverseDiMuPt = 1 / recoCandPt;
+    
+       /////////////////////
+       // Fill Histograms
+       dimuonMassHist->Fill(recoCandMass, scaleFactor);
+       phiStarHist->Fill(phiStar, scaleFactor);
+       phiStarCheckHist->Fill(phiStarCheck, scaleFactor);
+       dimuonPtHist->Fill(recoCandPt, scaleFactor);
+       inverseDiMuPtHist->Fill(inverseDiMuPt, scaleFactor);
+    }
   }
 
   TFile* outFile = new TFile(outputFileName,"RECREATE");
