@@ -1,0 +1,15 @@
+Error in <TTree::SetBranchAddress>: unknown branch -> nPU
+Error in <TTree::SetBranchAddress>: unknown branch -> genWeight
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+
+======== Preprocess the samples... 
+
+  /// Looping over Data
+
+    sample name:       Data
+    sample file:       /cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/revised/stage_1_singleMuon_RunDBoth_MINIAOD_GOLDEN_ALL.root
+    pileup file:       /cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/pileup/old/pileup_data_71mb.root
+    nOriginal:         74048559
+    N:                 4033608
+    nOriginalWeighted: 74048559
+
