@@ -223,7 +223,9 @@
 ./VariableHistogramer_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/include/Math/ParamFunctor.h
 ./VariableHistogramer_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/include/TRandom3.h
 ./VariableHistogramer_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/include/TRandom.h
-./VariableHistogramer_C.so: src/DataFormats.h src/helpers.h
+./VariableHistogramer_C.so: src/DataFormats.h src/helpers.h src/SampleClass.h
+./VariableHistogramer_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/include/TEntryList.h
+./VariableHistogramer_C.so: src/SampleClass.cxx src/SampleClass.h
 ./VariableHistogramer_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/include/Math/Functor.h
 ./VariableHistogramer_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/include/Math/IFunction.h
 ./VariableHistogramer_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/include/Math/IFunctionfwd.h

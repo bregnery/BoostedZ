@@ -16,33 +16,29 @@ canvas = root.TCanvas()
 # Access Histograms
 #ttHist = tt.Get("phiStarHist")
 #ttHist.SetName("TT")
-dyHist = dy.Get("dimuonPtHist")
-jsonHist = json.Get("dimuonPtHist")
-
-dyHist.SetFillColor(root.kOrange)
-dyHist.SetLineColor(root.kOrange)
-dyHist.SetMarkerStyle(0)
-dyHist.SetFillStyle(1)
+dyHist = dy.Get("phiStarHist")
+jsonHist = json.Get("phiStarHist")
 
 # Create a 2D Histogram for more control
 xMin = 0
-xMax = 800
-yMin = 0.001
-yMax = 3000000
-xTitle = "P_{T}(#mu#mu) [GeV/c]"
+xMax = 1
+yMin = 0
+yMax = 800000
+xTitle = "#phi* [Radians]"
 
-# Log y axis
-canvas.SetLogy(True)
-
-axisHist = root.TH2F("axisHist","P_{T}(#mu#mu)",1,xMin,xMax,1,yMin,yMax)
+axisHist = root.TH2F("axisHist","#phi*",1,xMin,xMax,1,yMin,yMax)
 axisHist.GetXaxis().SetTitle(xTitle)
 axisHist.GetYaxis().SetTitle("Events/Bin")
 axisHist.GetYaxis().SetTitleOffset(1.7)
 axisHist.Draw()
 
 jsonHist.SetLineColor(1)
-jsonHist.SetMarkerStyle(0)
+jsonHist.SetMarkerStyle(8)
 jsonHist.SetLineStyle(1)
+dyHist.SetFillColor(root.kOrange)
+dyHist.SetLineColor(root.kOrange)
+dyHist.SetMarkerStyle(0)
+dyHist.SetFillStyle(1)
 
 leg = root.TLegend(.7,.7,.9,.9,"MC sample")
 leg.AddEntry(jsonHist,"JSON data","l")
@@ -57,9 +53,9 @@ leg.AddEntry(dyHist,"DY","l")
 #stats_vhmumu.SetY1NDC(2 * y1 - y2)
 #stats_vhmumu.SetY2NDC(y1)
 #stats_vhmumu.Draw()
-dyHist.Draw("hist same")
-jsonHist.Draw("SAMES")
+dyHist.Draw("SAMES")
+jsonHist.Draw("hist same")
 leg.Draw()
 
-canvas.SaveAs("Hist_DiMuonPt.png")
+canvas.SaveAs("Hist_PhiStar.png")
 
