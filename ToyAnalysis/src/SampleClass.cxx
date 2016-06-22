@@ -18,7 +18,7 @@ Sample::Sample(TString infilename, TString inname, TTree *intree, TTree *inmetad
     else if(filename == TString("TT_13TeV_stageVar.root")) xsec = 831.76; // pb
     else xsec = -999; 
     
-    calculateNoriginal(&inmetadata);
+    calculateNoriginal(inmetadata);
 }
 
 Sample::~Sample() {
@@ -26,24 +26,20 @@ Sample::~Sample() {
   if (tree != 0) {
     delete tree;
   }
-  if (metadata != 0) {
-    delete metadata;
-  }
 }
 
 void Sample::calculateNoriginal(TTree *inmetadata)
 {
 // Calculate the number of original events using the meta data tree
 // Calculate the weighted number of original events as well
-    metadata = inmetadata;
-    metadata->Draw("sumEventWeights>>eweights_"+name);
+    inmetadata->Draw("sumEventWeights>>eweights_"+name);
     TH1F* sumEventWeightsHist = (TH1F*) gDirectory->Get("eweights_"+name); 
 
     // There are many ttrees combined so the histogram has a numEvents entry for each
     // file. The total number is equal to the average number times the total number of entries.
     nOriginalWeighted = sumEventWeightsHist->GetEntries()*sumEventWeightsHist->GetMean();
 
-    metadata->Draw("originalNumEvents>>nevents_"+name);
+    inmetadata->Draw("originalNumEvents>>nevents_"+name);
     TH1F* nEventsHist = (TH1F*) gDirectory->Get("nevents_"+name); 
     nOriginal = nEventsHist->GetEntries()*nEventsHist->GetMean();
 }

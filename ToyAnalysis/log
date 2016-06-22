@@ -1,0 +1,189 @@
+
+Processing run.C...
+Info in <TUnixSystem::ACLiC>: creating shared library /scratch/osg/bregnery/boostedZ/CMSSW_7_4_2/src/BoostedZ/ToyAnalysis/./VariableAdder_C.so
+Analyzing filename: /cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/monte_carlo/bg/dy/stage_1_dy_jetsToLL_ALL.root
+Entries in the tree: 4865535
+======== Setting Branch Address ========
+======== Branch Addresses Set! ========
+======== Checking truth info! ========
+======= Truth Info and Branch Addresses Set! ========
+======== Making Output File! :) ========
+======== Created Output File object ========
+======== Created outTree object ========
+======== Made Output File! ========
+Event: 0
+Event: 100000
+Event: 200000
+Event: 300000
+Event: 400000
+Event: 500000
+Event: 600000
+Event: 700000
+Event: 800000
+Event: 900000
+Event: 1000000
+Event: 1100000
+Event: 1200000
+Event: 1300000
+Event: 1400000
+Event: 1500000
+Event: 1600000
+Event: 1700000
+Event: 1800000
+Event: 1900000
+Event: 2000000
+Event: 2100000
+Event: 2200000
+Event: 2300000
+Event: 2400000
+Event: 2500000
+Event: 2600000
+Event: 2700000
+Event: 2800000
+Event: 2900000
+Event: 3000000
+Event: 3100000
+Event: 3200000
+Event: 3300000
+Event: 3400000
+Event: 3500000
+Event: 3600000
+Event: 3700000
+Event: 3800000
+Event: 3900000
+Event: 4000000
+Event: 4100000
+Event: 4200000
+Event: 4300000
+Event: 4400000
+Event: 4500000
+Event: 4600000
+Event: 4700000
+Event: 4800000
+Analyzing filename: /cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/3-25-16/stage_1_singleMuon_RunC25nsOct_MINIAOD_GOLDEN_ALL.root
+isData
+Entries in the tree: 27213
+======== Setting Branch Address ========
+======== Branch Addresses Set! ========
+======== Checking truth info! ========
+======= Truth Info and Branch Addresses Set! ========
+======== Making Output File! :) ========
+======== Created Output File object ========
+======== Created outTree object ========
+======== Made Output File! ========
+Event: 0
+Analyzing filename: /cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/3-25-16/stage_1_singleMuon_RunCD_GOLDEN_ALL.root
+isData
+Entries in the tree: 4060821
+======== Setting Branch Address ========
+======== Branch Addresses Set! ========
+======== Checking truth info! ========
+======= Truth Info and Branch Addresses Set! ========
+======== Making Output File! :) ========
+======== Created Output File object ========
+======== Created outTree object ========
+======== Made Output File! ========
+Event: 0
+Event: 100000
+Event: 200000
+Event: 300000
+Event: 400000
+Event: 500000
+Event: 600000
+Event: 700000
+Event: 800000
+Event: 900000
+Event: 1000000
+Event: 1100000
+Event: 1200000
+Event: 1300000
+Event: 1400000
+Event: 1500000
+Event: 1600000
+Event: 1700000
+Event: 1800000
+Event: 1900000
+Event: 2000000
+Event: 2100000
+Event: 2200000
+Event: 2300000
+Event: 2400000
+Event: 2500000
+Event: 2600000
+Event: 2700000
+Event: 2800000
+Event: 2900000
+Event: 3000000
+Event: 3100000
+Event: 3200000
+Event: 3300000
+Event: 3400000
+Event: 3500000
+Event: 3600000
+Event: 3700000
+Event: 3800000
+Event: 3900000
+Event: 4000000
+Analyzing filename: /cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/3-25-16/stage_1_singleMuon_RunDOct_v1_MINIAOD_GOLDEN_ALL.root
+isData
+Entries in the tree: 954380
+======== Setting Branch Address ========
+======== Branch Addresses Set! ========
+======== Checking truth info! ========
+======= Truth Info and Branch Addresses Set! ========
+======== Making Output File! :) ========
+======== Created Output File object ========
+======== Created outTree object ========
+======== Made Output File! ========
+Event: 0
+Event: 100000
+Event: 200000
+Event: 300000
+Event: 400000
+Event: 500000
+Event: 600000
+Event: 700000
+Event: 800000
+Event: 900000
+Analyzing filename: /cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/3-25-16/stage_1_singleMuon_RunDPrompt_v4_MINIAOD_GOLDEN_ALL.root
+isData
+Entries in the tree: 3079228
+======== Setting Branch Address ========
+======== Branch Addresses Set! ========
+======== Checking truth info! ========
+======= Truth Info and Branch Addresses Set! ========
+======== Making Output File! :) ========
+======== Created Output File object ========
+======== Created outTree object ========
+======== Made Output File! ========
+Event: 0
+Event: 100000
+Event: 200000
+Event: 300000
+Event: 400000
+Event: 500000
+Event: 600000
+Event: 700000
+Event: 800000
+Event: 900000
+Event: 1000000
+Event: 1100000
+Event: 1200000
+Event: 1300000
+Event: 1400000
+Event: 1500000
+Event: 1600000
+Event: 1700000
+Event: 1800000
+Event: 1900000
+Event: 2000000
+Event: 2100000
+Event: 2200000
+Event: 2300000
+Event: 2400000
+Event: 2500000
+Event: 2600000
+Event: 2700000
+Event: 2800000
+Event: 2900000
+Event: 3000000

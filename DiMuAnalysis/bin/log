@@ -1,0 +1,197 @@
+Error in <TTree::SetBranchAddress>: unknown branch -> nPU
+Error in <TTree::SetBranchAddress>: unknown branch -> genWeight
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+
+======== Preprocess the samples... 
+
+  /// Preprocessing DYJetsToLL
+
+    sample name:       DYJetsToLL
+    sample file:       /cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/monte_carlo/bg/dy/stage_1_dy_jetsToLL_ALL.root
+    pileup file:       ./pu_reweight_trees/PUCalib_gw_DYJetsToLL.root
+    nOriginal:         28747969
+    N:                 4865535
+    nOriginalWeighted: 19259107
+
+    +++ PU Reweighting DYJetsToLL...
+
+ Lumi/Pileup Reweighting: Computed Weights per In-Time Nint 
+   0 54.9573
+   1 136.582
+   2 196.193
+   3 43.6116
+   4 20.3062
+   5 3.29845
+   6 1.77881
+   7 2.10284
+   8 2.85236
+   9 2.82444
+   10 2.79211
+   11 2.70782
+   12 2.36953
+   13 1.77815
+   14 1.11328
+   15 0.576461
+   16 0.260135
+   17 0.109636
+   18 0.051937
+   19 0.0293881
+   20 0.0170801
+   21 0.00886492
+   22 0.00386626
+   23 0.00145753
+   24 0.000517682
+   25 0.000203058
+   26 0.000100352
+   27 6.18512e-05
+   28 4.32819e-05
+   29 3.23283e-05
+   30 2.39004e-05
+   31 1.51929e-05
+   32 7.21927e-06
+   33 3.80557e-06
+   34 1.34696e-06
+   35 4.89887e-07
+   36 1.77929e-07
+   37 5.5875e-08
+   38 2.0933e-08
+   39 4.8244e-09
+   40 1.50187e-09
+   41 4.32386e-10
+   42 1.20255e-10
+   43 3.48147e-11
+   44 6.61277e-12
+   45 2.02824e-12
+   46 1.06679e-12
+   47 1.81933e-13
+   48 -1.9192e-13
+   49 6.95391e-14
+        DYJetsToLL->lumiWeights: 0x51ee5f0
+
+  /// Preprocessing Data
+
+    sample name:       Data
+    sample file:       /cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/stage_1_singleMuon_RunCD_GOLDEN_ALL.root
+    pileup file:       /cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/pileup/pileup_data_71mb.root
+    nOriginal:         74815680
+    N:                 4060821
+    nOriginalWeighted: 74815680
+
+  /// Preprocessing TTJets
+
+    sample name:       TTJets
+    sample file:       /cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/monte_carlo/bg/ttbar/stage_1_ttJets_ALL.root
+    pileup file:       ./pu_reweight_trees/PUCalib_gw_TTJets.root
+    nOriginal:         42341666
+    N:                 6565171
+    nOriginalWeighted: 14041008
+
+    +++ PU Reweighting TTJets...
+
+ Lumi/Pileup Reweighting: Computed Weights per In-Time Nint 
+   0 -32.6932
+   1 -243.751
+   2 100.039
+   3 32.8622
+   4 23.1529
+   5 4.09643
+   6 1.76219
+   7 2.1444
+   8 2.93488
+   9 2.93507
+   10 2.90482
+   11 2.81549
+   12 2.40162
+   13 1.81639
+   14 1.1177
+   15 0.584403
+   16 0.257623
+   17 0.107996
+   18 0.0514951
+   19 0.028807
+   20 0.0165821
+   21 0.00853575
+   22 0.00386794
+   23 0.0014065
+   24 0.00049511
+   25 0.000200459
+   26 9.11647e-05
+   27 5.98821e-05
+   28 3.94298e-05
+   29 2.95488e-05
+   30 2.28713e-05
+   31 1.61107e-05
+   32 1.00097e-05
+   33 2.84399e-06
+   34 9.35376e-07
+   35 4.95918e-07
+   36 1.69923e-07
+   37 4.83478e-08
+   38 1.76993e-08
+   39 6.59881e-09
+   40 1.06955e-09
+   41 3.2474e-10
+   42 7.78212e-11
+   43 2.28599e-11
+   44 5.09327e-12
+   45 1.17563e-12
+   46 8.68419e-13
+   47 2.34496e-13
+   48 -4.5668e-13
+   49 1.18193e-14
+        TTJets->lumiWeights: 0x5301510
+
+======== N-1 Settings ========
+Selection Type: N-0
+cut #         : -1
+cut name      : nm0
+ismin         : 1
+
+
+  /// Looping over TTJets
+
+  /// Looping over DYJetsToLL
+
+  /// Looping over Data
+
+=========== Total Counts ============
+Signal:     0
+Background: 36241.9
+Total:      36241.9
+
+vSignal:     0
+vBackground: 36241.9
+vTotal:      36241.9
+
+
+=========== Significance ============
+Asimov w/o bgfit:    0
+Asimov w/ bgfit:     0
+s/sqrt(b):           0
+s/sqrt(b + varb):    0
+
+Asimov Significance vs Cut Value
+-0.5, 0
+0.5, 0
+
+
+S/sqrt(B) Significance vs Cut Value
+-0.5, 0
+0.5, 0
+
+
+########## Scale factor for nm0_TTJets: 10.2847
+########## Scale factor for MC stack: 0.969873
+
+########## Scale factor for counts_TTJets: 10.2847
+########## Scale factor for MC stack: 0.969873
+
+
+  /// Saving plots...
+
+
+=========== Counts ============
+Data: 35150
+Signal: 0
+Background: 36241.9
+
