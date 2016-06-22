@@ -1,8 +1,11 @@
-// Sample.h
+// SampleClass.h
 
 #ifndef ADD_SAMPLE
 #define ADD_SAMPLE
 
+#include <cmath>
+#include <iostream>
+#include <algorithm>
 #include "TMath.h"
 #include "TH1F.h"
 #include "TFile.h"

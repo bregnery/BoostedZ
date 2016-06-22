@@ -16,6 +16,8 @@
 #include <TRandom3.h>
 #include <algorithm>
 #include <vector>
+#include <TMath.h>
+#include <TEntryList.h>
 #include "src/DataFormats.h"
 #include "src/helpers.h"
 #include "src/SampleClass.h"
