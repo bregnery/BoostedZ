@@ -5,7 +5,7 @@
 typedef struct {
   int run;
   int lumi;
-  long long int event;
+  int event;
   int bx;
   int orbit;
 } _EventInfo;
@@ -103,10 +103,6 @@ typedef struct {
   float hltPt[3];
   float hltEta[3];
   float hltPhi[3];
-
-  float segmentCompatibility;
-  float combinedQualityChi2LocalPosition;
-  float combinedQualityTrkKink;
   
 } _MuonInfo;
 
@@ -119,6 +115,14 @@ typedef struct {
   float sumEt;
 } _MetInfo;
 
+// diJet
+typedef struct {
+  float mass;
+  float phi;
+  float eta;
+  float pt;
+  float Et;
+} _diJetInfo;
 
 // pf Jets
 typedef struct {
@@ -189,8 +193,6 @@ typedef struct {
   float genInvF[10];
   // Auxiliary Fraction (Undecayed Sigmas, etc.)
   float genAuxF[10];
-  // PUID
-  float puid[10];
 } _PFJetInfo;
 
 // generator level jets
