@@ -1,16 +1,15 @@
 # MakeFile
 
-
 # Set the Compiler
 CC = g++
 
 # Include the root libraries
 LIBFLAGS = `root-config --libs` -O3 -lXMLIO -lMLP -lMinuit
 
-# the director for the base library that enables the analysis
+# the directory for the base library that enables the analysis
 LIBDIR = ../src/
 
-# include the libdir and the root libraries
+# include the libdir and sdir and the root libraries
 CFLAGS = -I${LIBDIR} -c -g `root-config --cflags`
 
 # The name of the .cxx file you want to compile into an executable
@@ -18,7 +17,7 @@ MAIN = BoostedZAnalyzer
 
 # link all of the objects to the main program
 ${MAIN}: ${LIBDIR}Sample.o ${MAIN}.o
-	$(CC) $(LIBFLAGS) ${MAIN}.o -o ${MAIN}
+	$(CC) $(LIBFLAGS) ${LIBDIR}Sample.o ${MAIN}.o -o ${MAIN}
 
 ${MAIN}.o: ${MAIN}.cxx ${LIBDIR}DataFormats.h 
 	$(CC) $(CFLAGS) ${MAIN}.cxx -o ${MAIN}.o

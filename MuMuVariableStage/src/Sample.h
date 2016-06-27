@@ -47,13 +47,14 @@ class Sample
         void calculateNoriginal(); // calculate nOriginal and nOriginalWeighted
         void setBranchAddresses(); // link the values in the tree to vars
         void orderMuons();         // Orders muons by Pt
-	void addBranch(float newVar, TString newVarName); // Adds a branch with a leaf containing a floating point variable 
+	void addBranch(float newVar, TString newVarName, TBranch* newVarBranch); // Adds a branch with a leaf containing a floating point variable 
         float getWeight();         // get the weight for the histogram based upon the pileup weight and the MC gen weight
         float getScaleFactor(float luminosity); // get the scale factor for the MC histogram based upon the number of events, the data luminosity, and the xsec for the process 
-	TFile getOutFile(TString outfilename);
+	void getOutFile();
 
     protected:
         TFile* file;           // the file with the ttree
+	TFile* outFile;        // the output file that will contain new variables
 
 };
 

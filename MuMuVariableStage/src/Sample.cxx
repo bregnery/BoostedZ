@@ -31,10 +31,13 @@ Sample::Sample(TString infilename, TString iname, TString insampleType)
 {
     filename = infilename;
     name = iname;
-    sampleType = insampleType
+    sampleType = insampleType;
     treename = TString("dimuons/tree");
     file = new TFile(infilename);
     tree = (TTree*)file->Get(treename);
+    outFile = new TFile(iname + "_StageVar.root", "RECREATE");
+    outFile->cd();
+    outTree = new TTree("outTree","RECREATE");
     outTree = tree->CloneTree();
     nEvents = tree->GetEntries();
 
@@ -188,13 +191,10 @@ float Sample::getScaleFactor(float luminosity)
 //-----------------------------------------------------------------------------
 ///////////////////////////////////////////////////////////////////////////////
 
-TFile Sample::getOutFile(TString outfilename){
+void Sample::getOutFile(){
 // Creates an output file
 // Saves the output tree in this file
-      TFile* outFile = new TFile(outfilename, "RECREATE");
-      outFile->cd();
       outTree->Write();
       outFile->Close();
-      return outFile;
 }
 

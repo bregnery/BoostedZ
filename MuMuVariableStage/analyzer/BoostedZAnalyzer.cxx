@@ -1,10 +1,4 @@
 #include "Sample.h"
-#include "DiMuPlottingSystem.h"
-#include "CutSet.h"
-#include "Cut.h"
-#include "SelectionCuts.h"
-#include "CategorySelection.h"
-#include "JetSelectionTools.h"
 
 #include "TLorentzVector.h"
 
@@ -40,7 +34,8 @@ int main()
     // ================================================================
     // Data -----------------------------------------------------------
     // ================================================================
-                                             
+    
+    std::cout << "============ Accessing Data ===============" << std::endl;           
     
     TString datafilename = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/stage_1_singleMuon_RunCD_GOLDEN_ALL.root");
     //TString datafilename = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/stage_1_singleMuon_RunDBoth_MINIAOD_GOLDEN_ALL.root");
@@ -54,7 +49,9 @@ int main()
     // ================================================================
     // DYJetsToLL -----------------------------------------------------
     // ================================================================
-   
+  
+    std::cout << "========= Accessing DY Monte Carlo =========" << std::endl;
+ 
     TString dyfilename   = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/monte_carlo/bg/dy/stage_1_dy_jetsToLL_ALL.root");
     samples["DYJetsToLL"] = new Sample(dyfilename, "DYJetsToLL", "background");
     //samples["DYJetsToLL"]->pileupfile = "./pu_reweight_trees/PUCalib_gw_DYJetsToLL.root"; //nPU
@@ -63,10 +60,23 @@ int main()
     // ================================================================
     // TTJets ---------------------------------------------------------
     // ================================================================
-    
+   
+    std::cout << "=========== Accessing TT Monte Carlo ========" << std::endl;
+ 
     TString ttbarfilename   = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/monte_carlo/bg/ttbar/stage_1_ttJets_ALL.root");
     samples["TTJets"] = new Sample(ttbarfilename, "TTJets", "background");
     //samples["TTJets"]->pileupfile = "./pu_reweight_trees/PUCalib_gw_TTJets.root"; //nPU
     samples["TTJets"]->xsec = 831.76; // pb
 
+    // ================================================================
+    // Output files ---------------------------------------------------
+    // ================================================================
+
+    std::cout << "========== Closing Output Files =============" << std::endl;
+
+    datasample->getOutFile();
+    samples["DYJetsToLL"]->getOutFile();
+    samples["TTJets"]->getOutFile();
+
     return 0;
+}
