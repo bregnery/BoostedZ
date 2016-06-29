@@ -1,14 +1,6 @@
 // Keeps track of some sample information
 // Extremely helpful for calculating scale factors
 
-#include <cmath>
-#include <iostream>
-#include <algorithm>
-#include "TMath.h"
-#include "TH1F.h"
-#include "TFile.h"
-#include "TTree.h"
-#include "TEntryList.h"
 #include "SampleClass.h"
 
 Sample::Sample() 

@@ -1,7 +1,7 @@
-// PlotFile.h
+// Sample.h
 
-#ifndef ADD_PLOTFILE
-#define ADD_PLOTFile
+#ifndef ADD_SAMPLE
+#define ADD_SAMPLE
 
 #include "TMath.h"
 #include "TH1F.h"
@@ -11,19 +11,19 @@
 
 #include "LumiReweightingStandAlone.h"
 #include "VarSet.h"
-#include "Sample.h"
 
-class PlotFile
+class Sample
 {
     public:
-        PlotFile();
-        PlotFile(TString plotfilename, TString name, Sample sample);
-        ~PlotFile();
+        Sample();
+        Sample(TString infilename, TString iname, TString insampleType);
+        ~Sample();
 
         TString name;
         TString filename;
         TString treename;
         TTree* tree;
+	//TTree* outTree;
         reweight::LumiReWeighting* lumiWeights;  // Information for pileup reweighting 
 
         TString dir;           // DAS directory
@@ -33,7 +33,7 @@ class PlotFile
         int plotColor;         // the color used when plotting the sample
         int nOriginal;         // the number of events run over to get this sample
         int nOriginalWeighted; // the number of original events run over to get this sample accounting for genWeights
-        int nEvents;                 // the number of events in the sample
+        int nEvents;           // the number of events in the sample
 
         float xsec;            // xsec in pb
         float lumi;            // the luminosity of the data or effective luminosity of MC
@@ -46,12 +46,15 @@ class PlotFile
 
         void calculateNoriginal(); // calculate nOriginal and nOriginalWeighted
         void setBranchAddresses(); // link the values in the tree to vars
+        void orderMuons();         // Orders muons by Pt
+	void addBranch(float newVar, TString newVarName, TBranch* newVarBranch); // Adds a branch with a leaf containing a floating point variable 
         float getWeight();         // get the weight for the histogram based upon the pileup weight and the MC gen weight
         float getScaleFactor(float luminosity); // get the scale factor for the MC histogram based upon the number of events, the data luminosity, and the xsec for the process 
-        float getScaleFactor(float luminosity, float reductionFactor); // get the scale factor for the MC histogram based upon the number of events, the data luminosity, and the xsec for the process 
+	//void getOutFile();
 
     protected:
         TFile* file;           // the file with the ttree
+	//TFile* outFile;        // the output file that will contain new variables
 
 };
 
