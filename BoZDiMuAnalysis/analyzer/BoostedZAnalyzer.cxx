@@ -1,4 +1,5 @@
 #include "Sample.h"
+#include "../selection/Cuts.h"
 
 #include "TLorentzVector.h"
 
@@ -37,7 +38,7 @@ int main()
     
     std::cout << "============ Accessing Data ===============" << std::endl;           
     
-    TString datafilename = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/stage_1_singleMuon_RunCD_GOLDEN_ALL.root");
+    TString datafilename = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data/25ns/golden/CMSSW_7_4_X/stage_1_singleMuon_RunCD_GOLDEN_ALL.root");
     //TString datafilename = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/stage_1_singleMuon_RunDBoth_MINIAOD_GOLDEN_ALL.root");
     Sample* datasample = new Sample(datafilename, "Data", "data");
     datasample->lumi = luminosity;
@@ -50,9 +51,9 @@ int main()
     // DYJetsToLL -----------------------------------------------------
     // ================================================================
   
-    std::cout << "========= Accessing DY Monte Carlo =========" << std::endl;
+    std::cout << "========== Accessing DY Monte Carlo =========" << std::endl;
  
-    TString dyfilename   = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/monte_carlo/bg/dy/stage_1_dy_jetsToLL_ALL.root");
+    TString dyfilename   = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/mc/bg/dy/CMSSW_7_4_X/stage_1_dy_jetsToLL_ALL.root");
     samples["DYJetsToLL"] = new Sample(dyfilename, "DYJetsToLL", "background");
     //samples["DYJetsToLL"]->pileupfile = "./pu_reweight_trees/PUCalib_gw_DYJetsToLL.root"; //nPU
     samples["DYJetsToLL"]->xsec = 6025.2; // pb
@@ -63,10 +64,25 @@ int main()
    
     std::cout << "=========== Accessing TT Monte Carlo ========" << std::endl;
  
-    TString ttbarfilename   = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/monte_carlo/bg/ttbar/stage_1_ttJets_ALL.root");
+    TString ttbarfilename   = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/mc/bg/ttbar/CMSSW_7_4_X/stage_1_ttJets_ALL.root");
     samples["TTJets"] = new Sample(ttbarfilename, "TTJets", "background");
     //samples["TTJets"]->pileupfile = "./pu_reweight_trees/PUCalib_gw_TTJets.root"; //nPU
     samples["TTJets"]->xsec = 831.76; // pb
+
+    ///////////////////////////////////////////////////////////////////
+    // Cuts------------------------------------------------------------
+    ///////////////////////////////////////////////////////////////////
+
+    // map containing the cuts
+    std::map<std::string, Cuts*> cuts;   
+    
+    std::cout << "=========== Applying Selection Criteria to Data ======" << std::endl;
+    cuts["Data"] = new Cuts(samples["Data"]);
+    std::cout << "=========== Applying Selection Criteria to DY MC ======" << std::endl;
+    cuts["DYJetsToLL"] = new Cuts(samples["DYJetsToLL"]);
+    std::cout << "=========== Applying Selection Criteria to TT MC ======" << std::endl;
+    cuts["TTJets"] = new Cuts(samples["TTJets"]);
+
 
     return 0;
 }
