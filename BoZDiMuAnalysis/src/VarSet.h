@@ -24,6 +24,7 @@ class VarSet
  
         float recoCandMass, recoCandMassPF;
         float recoCandPt, recoCandPtPF;
+	float inverseDiMuPt;
 	float recoCandY, recoCandYPF;
 	float recoCandPhi, recoCandPhiPF;
         float rho;

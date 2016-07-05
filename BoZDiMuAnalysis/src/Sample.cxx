@@ -46,6 +46,7 @@ Sample::Sample(TString infilename, TString iname, TString insampleType)
     lumi = -999;
     
     setBranchAddresses();
+    setAdditionalVariables();
     calculateNoriginal();
     orderMuons();
 }
@@ -91,6 +92,15 @@ void Sample::setBranchAddresses()
     tree->SetBranchAddress("recoCandPhiPF", &vars.recoCandPhiPF);
     tree->SetBranchAddress("rho", &vars.rho);
 }
+///////////////////////////////////////////////////////////////////////////////
+//-----------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////////////
+
+void Sample::setAdditionalVariables()
+{
+    vars.inverseDiMuPt = 1 / vars.recoCandPt;
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 //-----------------------------------------------------------------------------
 ///////////////////////////////////////////////////////////////////////////////
@@ -201,3 +211,4 @@ void Sample::getOutFile(){
       outFile->Close();
 }
 */
+

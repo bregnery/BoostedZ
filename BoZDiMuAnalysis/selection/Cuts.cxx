@@ -22,7 +22,7 @@ Cuts::Cuts(Sample* insample)
 {
 // For loop that runs over all the events to create boolean flags
 
-   unsigned reportEach = 100000;
+   unsigned reportEach = 1000000;
 
    sample = insample;
 

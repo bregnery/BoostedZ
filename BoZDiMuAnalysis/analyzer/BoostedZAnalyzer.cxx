@@ -1,5 +1,6 @@
 #include "Sample.h"
 #include "../selection/Cuts.h"
+#include "SampleHistos.h"
 
 #include "TLorentzVector.h"
 
@@ -62,7 +63,7 @@ int main()
     // TTJets ---------------------------------------------------------
     // ================================================================
    
-    std::cout << "=========== Accessing TT Monte Carlo ========" << std::endl;
+    std::cout << "========== Accessing TT Monte Carlo =========" << std::endl;
  
     TString ttbarfilename   = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/mc/bg/ttbar/CMSSW_7_4_X/stage_1_ttJets_ALL.root");
     samples["TTJets"] = new Sample(ttbarfilename, "TTJets", "background");
@@ -83,6 +84,18 @@ int main()
     std::cout << "=========== Applying Selection Criteria to TT MC ======" << std::endl;
     cuts["TTJets"] = new Cuts(samples["TTJets"]);
 
+    ///////////////////////////////////////////////////////////////////
+    // Histograms------------------------------------------------------
+    ///////////////////////////////////////////////////////////////////    
 
+    // map containg the Histogram variables
+    std::map<std::string, SampleHistos*> sampleHistos;
+
+    std::cout << "=========== Creating Data Histogram file ===========" << std::endl;
+    sampleHistos["Data"] = new SampleHistos(samples["Data"], cuts["Data"]->isBoostedZprelim, "BasicCuts", luminosity);
+    std::cout << "=========== Creating DY MC Histogram file ==========" << std::endl;
+    sampleHistos["DYJetsToLL"] = new SampleHistos(samples["DYJetsToLL"], cuts["DYJetsToLL"]->isBoostedZprelim, "BasicCuts", luminosity);
+    std::cout << "=========== Creating TT MC Histogram file ==========" << std::endl;
+    sampleHistos["TTJets"] = new SampleHistos(samples["TTJets"], cuts["TTJets"]->isBoostedZprelim, "BasicCuts", luminosity);
     return 0;
 }

@@ -19,8 +19,8 @@ CFLAGS = -I${LIBDIR} -c -g `root-config --cflags`
 MAIN = BoostedZAnalyzer
 
 # link all of the objects to the main program
-${MAIN}: ${LIBDIR}Sample.o ${SDIR}Cuts.o ${MAIN}.o
-	$(CC) $(LIBFLAGS) ${LIBDIR}Sample.o ${SDIR}Cuts.o ${MAIN}.o -o ${MAIN}
+${MAIN}: ${LIBDIR}Sample.o ${SDIR}Cuts.o ${LIBDIR}SampleHistos.o ${MAIN}.o
+	$(CC) $(LIBFLAGS) ${LIBDIR}Sample.o ${SDIR}Cuts.o ${LIBDIR}SampleHistos.o ${MAIN}.o -o ${MAIN}
 
 ${MAIN}.o: ${MAIN}.cxx ${LIBDIR}DataFormats.h 
 	$(CC) $(CFLAGS) ${MAIN}.cxx -o ${MAIN}.o
@@ -31,6 +31,9 @@ ${LIBDIR}Sample.o: ${LIBDIR}Sample.cxx ${LIBDIR}Sample.h ${LIBDIR}VarSet.h ${LIB
 
 ${SDIR}Cuts.o: ${SDIR}Cuts.cxx ${SDIR}Cuts.h ${LIBDIR}Sample.h
 	$(CC) $(CFLAGS) ${SDIR}Cuts.cxx -o ${SDIR}Cuts.o
+
+${LIBDIR}SampleHistos.o: ${LIBDIR}SampleHistos.cxx ${LIBDIR}SampleHistos.h ${LIBDIR}Sample.h ${SDIR}Cuts.h
+	$(CC) $(CFLAGS) ${LIBDIR}SampleHistos.cxx -o ${LIBDIR}SampleHistos.o
 
 clean:
 	rm *.o

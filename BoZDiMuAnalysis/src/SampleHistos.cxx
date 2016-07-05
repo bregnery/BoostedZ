@@ -17,7 +17,7 @@ SampleHistos::SampleHistos(){}
 //-------------------------------------------------------------------//
 ///////////////////////////////////////////////////////////////////////
 
-SampleHistos::SampleHistos(Sample* sample, vector<bool> isCut, TString cutName, float luminosity)
+SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutName, float luminosity)
 {
    using namespace std;
 
@@ -66,9 +66,9 @@ SampleHistos::SampleHistos(Sample* sample, vector<bool> isCut, TString cutName, 
 	sample->getEntry(i);
 
         // fill histograms
-        dimuonMassHist->Fill(sample->vars.recoCandMass, sample->get() );
-	dimuonPtHist->Fill(sample->vars.recoCandPt, sample->get() );
-	inverseDiMuPtHist->Fill(sample->inverseDiMuPt, sample->get() );
+        dimuonMassHist->Fill(sample->vars.recoCandMass, sample->getScaleFactor(luminosity) );
+	dimuonPtHist->Fill(sample->vars.recoCandPt, sample->getScaleFactor(luminosity) );
+	inverseDiMuPtHist->Fill(sample->vars.inverseDiMuPt, sample->getScaleFactor(luminosity) );
 	
    }
   
@@ -81,3 +81,14 @@ SampleHistos::SampleHistos(Sample* sample, vector<bool> isCut, TString cutName, 
    inverseDiMuPtHist->Write();
    file->Close();
 }
+
+//////////////////////////////////////////////////////////////////
+//--------------------------------------------------------------//
+//////////////////////////////////////////////////////////////////
+
+void SampleHistos::setHistTitles(TH1F* hist, TString xtitle, TString ytitle)
+{
+  hist->GetXaxis()->SetTitle(xtitle);
+  hist->GetYaxis()->SetTitle(ytitle);
+}
+

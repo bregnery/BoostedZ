@@ -16,7 +16,9 @@ class SampleHistos
 {
    public:
 	SampleHistos();
-	SampleHistos(Sample* sample, vector<bool> isCut, TString cutName, float luminosity);
+	SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutName, float luminosity);
+
+	void setHistTitles(TH1F* hist, TString xtitle, TString ytitle);
 
    protected:
 	TFile* file;  // output file with histograms

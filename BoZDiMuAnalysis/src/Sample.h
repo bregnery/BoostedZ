@@ -46,6 +46,7 @@ class Sample
 
         void calculateNoriginal(); // calculate nOriginal and nOriginalWeighted
         void setBranchAddresses(); // link the values in the tree to vars
+	void setAdditionalVariables(); // calculates values of new variables
         void orderMuons();         // Orders muons by Pt
 	void addBranch(float newVar, TString newVarName, TBranch* newVarBranch); // Adds a branch with a leaf containing a floating point variable 
         float getWeight();         // get the weight for the histogram based upon the pileup weight and the MC gen weight
