@@ -47,11 +47,15 @@ void Cuts::BoostedZprelim(int i)
 
    sample->getEntry(i);
 
+   //sample->setAdditionalVariables(i);
+
    isBoostedZprelim[i] = false;   
 
    // Cut on Dimuon Mass
    if(sample->vars.recoCandMass >= 60 && sample->vars.recoCandMass <= 120){
 	isBoostedZprelim[i] = true;
+	//std::cout << "Mass: " << sample->vars.recoCandMass << std::endl;
+	//std::cout << "inverseDiMuPt: " << sample->inverseDiMuPt[i] << std::endl;
    }
 }
 

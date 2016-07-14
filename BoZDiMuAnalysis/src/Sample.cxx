@@ -44,11 +44,11 @@ Sample::Sample(TString infilename, TString iname, TString insampleType)
     lumiWeights = 0;
     xsec = -999; 
     lumi = -999;
-    
+ 
     setBranchAddresses();
-    setAdditionalVariables();
     calculateNoriginal();
     orderMuons();
+    setAdditionalVariables();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -92,13 +92,20 @@ void Sample::setBranchAddresses()
     tree->SetBranchAddress("recoCandPhiPF", &vars.recoCandPhiPF);
     tree->SetBranchAddress("rho", &vars.rho);
 }
+
 ///////////////////////////////////////////////////////////////////////////////
-//-----------------------------------------------------------------------------
-///////////////////////////////////////////////////////////////////////////////
+////-----------------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////////////////////
 
 void Sample::setAdditionalVariables()
 {
-    vars.inverseDiMuPt = 1 / vars.recoCandPt;
+    for(unsigned i=0; i<nEvents; i++){
+	getEntry(i);
+	inverseDiMuPt.push_back (1 / vars.recoCandPt);
+	
+	// Debugging
+	//std::cout << "inverseDiMuPt: " << inverseDiMuPt[i] << std::endl;
+    }
 }
 
 ///////////////////////////////////////////////////////////////////////////////

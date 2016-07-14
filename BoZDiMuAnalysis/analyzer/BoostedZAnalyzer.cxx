@@ -41,12 +41,12 @@ int main()
     
     TString datafilename = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data/25ns/golden/CMSSW_7_4_X/stage_1_singleMuon_RunCD_GOLDEN_ALL.root");
     //TString datafilename = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/stage_1_singleMuon_RunDBoth_MINIAOD_GOLDEN_ALL.root");
-    Sample* datasample = new Sample(datafilename, "Data", "data");
-    datasample->lumi = luminosity;
-    datasample->xsec = 9999;
+    samples["Data"] = new Sample(datafilename, "Data", "data");
+    samples["Data"]->lumi = luminosity;
+    samples["Data"]->xsec = 9999;
     //datasample->pileupfile = "/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/pileup/old/PUCalib_Golden_71mb.root";
     //datasample->pileupfile = "/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/pileup/pileup_data_71mb.root";
-    samples["Data"] = datasample;
+    //samples["Data"] = datasample;
     
     // ================================================================
     // DYJetsToLL -----------------------------------------------------

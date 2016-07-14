@@ -44,7 +44,7 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
    dimuonPtHist->Sumw2();
 
    // Plot the 1/mumuPt
-   TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","",100,0,0.02);
+   TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","",100,0,0.2);
    setHistTitles(inverseDiMuPtHist,"1/P_{T}(#mu#mu) [c/GeV]","Events");
    inverseDiMuPtHist->SetStats(1);
    inverseDiMuPtHist->Sumw2();
@@ -61,14 +61,19 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
 	if(i % reportEach == 0) std::cout << "Event: " << i << std::endl;
 
 	// Test if event passes the cut
-	if(isCut[i] == true) continue;
+	if(isCut[i] == false) continue;
 	
 	sample->getEntry(i);
+
+	// Debugging
+	//std::cout << "Mass: " << sample->vars.recoCandMass << std::endl;
+	std::cout << "inverseDiMuPt: " << sample->inverseDiMuPt[i] << std::endl;
+	
 
         // fill histograms
         dimuonMassHist->Fill(sample->vars.recoCandMass, sample->getScaleFactor(luminosity) );
 	dimuonPtHist->Fill(sample->vars.recoCandPt, sample->getScaleFactor(luminosity) );
-	inverseDiMuPtHist->Fill(sample->vars.inverseDiMuPt, sample->getScaleFactor(luminosity) );
+	inverseDiMuPtHist->Fill(sample->inverseDiMuPt[i], sample->getScaleFactor(luminosity) );
 	
    }
   

@@ -3,6 +3,7 @@
 #ifndef ADD_SAMPLE
 #define ADD_SAMPLE
 
+#include <vector>
 #include "TMath.h"
 #include "TH1F.h"
 #include "TFile.h"
@@ -39,14 +40,15 @@ class Sample
         float lumi;            // the luminosity of the data or effective luminosity of MC
 
         VarSet vars;           // all of the variables from the ttree
+	std::vector<float> inverseDiMuPt;   // additional calculated variables
 
         int getEntry(int i);                    // load the ith event from the ttree into vars
         int getEntry(int i, TEntryList* list);  // load ith event from the list into vars
                                                 // the ith event in the list maps to the jth tree entry
 
         void calculateNoriginal(); // calculate nOriginal and nOriginalWeighted
-        void setBranchAddresses(); // link the values in the tree to vars
-	void setAdditionalVariables(); // calculates values of new variables
+        void setAdditionalVariables(); // calculates values of new variables
+	void setBranchAddresses(); // link the values in the tree to vars
         void orderMuons();         // Orders muons by Pt
 	void addBranch(float newVar, TString newVarName, TBranch* newVarBranch); // Adds a branch with a leaf containing a floating point variable 
         float getWeight();         // get the weight for the histogram based upon the pileup weight and the MC gen weight
