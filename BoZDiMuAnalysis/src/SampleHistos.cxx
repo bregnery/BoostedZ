@@ -44,7 +44,7 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
    dimuonPtHist->Sumw2();
 
    // Plot the 1/mumuPt
-   TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","",100,0,0.2);
+   TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","",100,0,0.02);
    setHistTitles(inverseDiMuPtHist,"1/P_{T}(#mu#mu) [c/GeV]","Events");
    inverseDiMuPtHist->SetStats(1);
    inverseDiMuPtHist->Sumw2();
@@ -67,7 +67,7 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
 
 	// Debugging
 	//std::cout << "Mass: " << sample->vars.recoCandMass << std::endl;
-	std::cout << "inverseDiMuPt: " << sample->inverseDiMuPt[i] << std::endl;
+	//std::cout << "inverseDiMuPt: " << sample->inverseDiMuPt[i] << std::endl;
 	
 
         // fill histograms

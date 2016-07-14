@@ -202,6 +202,9 @@ float Sample::getScaleFactor(float luminosity)
 {
 // Scale the MC histograms based upon the data luminosity, the number of events
 // that the CMSSW analyzer looked at, and the xsec for the process
+      // Debugging
+      //if(sampleType.Contains("data")) std::cout << "data" << std::endl;
+
       if(sampleType.Contains("data")) return 1.0;
       else return luminosity*xsec/nOriginalWeighted;
 }

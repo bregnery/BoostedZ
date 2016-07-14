@@ -26,10 +26,10 @@ int main()
     ///////////////////////////////////////////////////////////////////
    
     float luminosity = 2169;
-    float lumiSF = 10;
+    //float lumiSF = 10;
     
     // use this to scale the MC for some projected amount of luminosity
-    luminosity *= lumiSF;
+    //luminosity *= lumiSF;
     
     //float signalSF = 100;
     
