@@ -7,8 +7,8 @@ from src.helpers import *
 root.gROOT.SetBatch(True)
 
 # Open root files
-dy = root.TFile("DYJetsToLL_BasicCuts_Hist.root")
-json = root.TFile("Data_BasicCuts_Hist.root")
+dy = root.TFile("../DYJetsToLL_BasicCuts_Hist.root")
+json = root.TFile("../Data_BasicCuts_Hist.root")
 
 # Create TCanvas
 canvas = root.TCanvas()

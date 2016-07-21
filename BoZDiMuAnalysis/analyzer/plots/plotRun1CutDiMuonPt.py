@@ -7,8 +7,8 @@ from src.helpers import *
 root.gROOT.SetBatch(True)
 
 # Open root files
-dy = root.TFile("../DYJetsToLL_BasicCuts_Hist.root")
-json = root.TFile("../Data_BasicCuts_Hist.root")
+dy = root.TFile("../DYJetsToLL_Run1Cuts_Hist.root")
+json = root.TFile("../Data_Run1Cuts_Hist.root")
 
 # Create TCanvas
 canvas = root.TCanvas()
@@ -16,17 +16,25 @@ canvas = root.TCanvas()
 # Access Histograms
 #ttHist = tt.Get("phiStarHist")
 #ttHist.SetName("TT")
-dyHist = dy.Get("dimuonMassHist")
-jsonHist = json.Get("dimuonMassHist")
+dyHist = dy.Get("dimuonPtHist")
+jsonHist = json.Get("dimuonPtHist")
+
+dyHist.SetFillColor(root.kOrange)
+dyHist.SetLineColor(root.kOrange)
+dyHist.SetMarkerStyle(0)
+dyHist.SetFillStyle(1)
 
 # Create a 2D Histogram for more control
-xMin = 60
-xMax = 120
-yMin = 0
-yMax = 800000
-xTitle = "M(#mu#mu) [GeV/c^{2}]"
+xMin = 0
+xMax = 800
+yMin = 0.001
+yMax = 30000
+xTitle = "P_{T}(#mu#mu) [GeV/c]"
 
-axisHist = root.TH2F("axisHist","M(#mu#mu)",1,xMin,xMax,1,yMin,yMax)
+# Log y axis
+canvas.SetLogy(True)
+
+axisHist = root.TH2F("axisHist","P_{T}(#mu#mu)",1,xMin,xMax,1,yMin,yMax)
 axisHist.GetXaxis().SetTitle(xTitle)
 axisHist.GetYaxis().SetTitle("Events/Bin")
 axisHist.GetYaxis().SetTitleOffset(1.7)
@@ -35,10 +43,6 @@ axisHist.Draw()
 jsonHist.SetLineColor(1)
 jsonHist.SetMarkerStyle(8)
 jsonHist.SetLineStyle(1)
-dyHist.SetFillColor(root.kOrange)
-dyHist.SetLineColor(root.kOrange)
-dyHist.SetMarkerStyle(0)
-dyHist.SetFillStyle(1)
 
 leg = root.TLegend(.7,.7,.9,.9,"MC sample")
 leg.AddEntry(jsonHist,"JSON data","l")
@@ -57,5 +61,5 @@ dyHist.Draw("hist same")
 jsonHist.Draw("SAMES")
 leg.Draw()
 
-canvas.SaveAs("Hist_DiMuonMass.png")
+canvas.SaveAs("Hist_Run1CutsDiMuonPt.png")
 

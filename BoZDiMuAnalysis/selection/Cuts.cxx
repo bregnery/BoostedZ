@@ -33,7 +33,7 @@ Cuts::Cuts(Sample* insample)
    {
 	if(i % reportEach == 0) std::cout << "Event: " << i << std::endl;
 	BoostedZprelim(i);
-	//Run1BoostedZ(i);
+	Run1BoostedZ(i);
    }
 }
 
@@ -67,11 +67,22 @@ void Cuts::Run1BoostedZ(int i)
 {
 // Cuts used in the first run of the LHC
 
-    sample->getEntry(i);
+   sample->getEntry(i);
 
-    isRun1BoostedZ[i] = false;
+   isRun1BoostedZ[i] = false;
 
-    isRun1BoostedZ[i] = true;
+   // Cut on Dimuon Mass
+   if(sample->vars.recoCandMass >= 60 && sample->vars.recoCandMass <= 120){
+   // Cut on Dimuon Pt
+   if(sample->vars.recoCandPt >= 50){
+   // Cut on individual muon pt
+   if(sample->vars.reco1.pt >= 45 && sample->vars.reco2.pt >= 45){
+   // Opposite sign charges
+   if(sample->vars.reco1.charge != sample->vars.reco2.charge){
+   // Cut on the muon eta difference
+   if(sample->deltaEta[i] <= 1.0){
+       isRun1BoostedZ[i] = true;
+   }}}}}
 }
 
 

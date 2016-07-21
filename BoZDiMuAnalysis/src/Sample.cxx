@@ -101,8 +101,12 @@ void Sample::setAdditionalVariables()
 {
     for(unsigned i=0; i<nEvents; i++){
 	getEntry(i);
+	// Calculate inverse Dimuon Pt for each event
 	inverseDiMuPt.push_back (1 / vars.recoCandPt);
-	
+	// Calculate the eta difference between the muons
+	// for each event
+	deltaEta.push_back(TMath::Abs(vars.reco1.eta - vars.reco2.eta));
+		
 	// Debugging
 	//std::cout << "inverseDiMuPt: " << inverseDiMuPt[i] << std::endl;
     }

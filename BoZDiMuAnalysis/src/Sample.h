@@ -40,7 +40,8 @@ class Sample
         float lumi;            // the luminosity of the data or effective luminosity of MC
 
         VarSet vars;           // all of the variables from the ttree
-	std::vector<float> inverseDiMuPt;   // additional calculated variables
+	std::vector<float> inverseDiMuPt;   // 1/ Dimuon Pt
+	std::vector<float> deltaEta;        // the eta difference between the two muons
 
         int getEntry(int i);                    // load the ith event from the ttree into vars
         int getEntry(int i, TEntryList* list);  // load ith event from the list into vars

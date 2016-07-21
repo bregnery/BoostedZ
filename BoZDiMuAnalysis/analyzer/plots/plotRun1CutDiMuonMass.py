@@ -7,8 +7,8 @@ from src.helpers import *
 root.gROOT.SetBatch(True)
 
 # Open root files
-dy = root.TFile("../DYJetsToLL_BasicCuts_Hist.root")
-json = root.TFile("../Data_BasicCuts_Hist.root")
+dy = root.TFile("../DYJetsToLL_Run1Cuts_Hist.root")
+json = root.TFile("../Data_Run1Cuts_Hist.root")
 
 # Create TCanvas
 canvas = root.TCanvas()
@@ -23,7 +23,7 @@ jsonHist = json.Get("dimuonMassHist")
 xMin = 60
 xMax = 120
 yMin = 0
-yMax = 800000
+yMax = 20000
 xTitle = "M(#mu#mu) [GeV/c^{2}]"
 
 axisHist = root.TH2F("axisHist","M(#mu#mu)",1,xMin,xMax,1,yMin,yMax)
@@ -57,5 +57,5 @@ dyHist.Draw("hist same")
 jsonHist.Draw("SAMES")
 leg.Draw()
 
-canvas.SaveAs("Hist_DiMuonMass.png")
+canvas.SaveAs("Hist_Run1CutsDiMuonMass.png")
 
