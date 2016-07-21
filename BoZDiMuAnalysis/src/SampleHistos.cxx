@@ -71,11 +71,22 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
 	
 
         // fill histograms
-        dimuonMassHist->Fill(sample->vars.recoCandMass, sample->getScaleFactor(luminosity) );
-	dimuonPtHist->Fill(sample->vars.recoCandPt, sample->getScaleFactor(luminosity) );
-	inverseDiMuPtHist->Fill(sample->inverseDiMuPt[i], sample->getScaleFactor(luminosity) );
+        dimuonMassHist->Fill(sample->vars.recoCandMass, sample->getWeight() );
+	dimuonPtHist->Fill(sample->vars.recoCandPt, sample->getWeight() );
+	inverseDiMuPtHist->Fill(sample->inverseDiMuPt[i], sample->getWeight() );
 	
    }
+   
+   // Debugging
+   std::cout << "Scale Factor: " << sample->getScaleFactor(luminosity) << std::endl;
+
+   /////////////////////////////////////////////////////////////////////
+   // Scale Histograms--------------------------------------------------
+   /////////////////////////////////////////////////////////////////////
+
+   dimuonMassHist->Scale(sample->getScaleFactor(luminosity));
+   dimuonPtHist->Scale(sample->getScaleFactor(luminosity));
+   inverseDiMuPtHist->Scale(sample->getScaleFactor(luminosity));
   
    /////////////////////////////////////////////////////////////////////
    // Write Histograms--------------------------------------------------
