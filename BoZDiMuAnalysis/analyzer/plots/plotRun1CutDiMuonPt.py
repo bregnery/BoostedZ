@@ -44,7 +44,7 @@ jsonHist.SetLineColor(1)
 jsonHist.SetMarkerStyle(8)
 jsonHist.SetLineStyle(1)
 
-leg = root.TLegend(.7,.7,.9,.9,"MC sample")
+leg = root.TLegend(.7,.7,.9,.9,"Sample")
 leg.AddEntry(jsonHist,"JSON data","l")
 leg.AddEntry(dyHist,"DY","l")
 

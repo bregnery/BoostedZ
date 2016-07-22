@@ -40,7 +40,7 @@ dyHist.SetLineColor(root.kOrange)
 dyHist.SetMarkerStyle(0)
 dyHist.SetFillStyle(1)
 
-leg = root.TLegend(.2,.7,.4,.9,"MC sample")
+leg = root.TLegend(.2,.7,.4,.9,"Sample")
 leg.AddEntry(jsonHist,"JSON data","l")
 leg.AddEntry(dyHist,"DY","l")
 

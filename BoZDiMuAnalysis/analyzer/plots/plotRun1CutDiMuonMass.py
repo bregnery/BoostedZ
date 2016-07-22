@@ -23,7 +23,7 @@ jsonHist = json.Get("dimuonMassHist")
 xMin = 60
 xMax = 120
 yMin = 0
-yMax = 20000
+yMax = 6500
 xTitle = "M(#mu#mu) [GeV/c^{2}]"
 
 axisHist = root.TH2F("axisHist","M(#mu#mu)",1,xMin,xMax,1,yMin,yMax)
@@ -40,7 +40,7 @@ dyHist.SetLineColor(root.kOrange)
 dyHist.SetMarkerStyle(0)
 dyHist.SetFillStyle(1)
 
-leg = root.TLegend(.7,.7,.9,.9,"MC sample")
+leg = root.TLegend(.7,.7,.9,.9,"Sample")
 leg.AddEntry(jsonHist,"JSON data","l")
 leg.AddEntry(dyHist,"DY","l")
 

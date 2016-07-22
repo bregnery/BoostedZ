@@ -23,7 +23,7 @@ jsonHist = json.Get("inverseDiMuPtHist")
 xMin = 0
 xMax = 0.02
 yMin = 0
-yMax = 1500
+yMax = 600
 xTitle = "1/P_{T}(#mu#mu) [c/GeV]"
 
 axisHist = root.TH2F("axisHist","1/P_{T}(#mu#mu)",1,xMin,xMax,1,yMin,yMax)
@@ -40,7 +40,7 @@ dyHist.SetLineColor(root.kOrange)
 dyHist.SetMarkerStyle(0)
 dyHist.SetFillStyle(1)
 
-leg = root.TLegend(.7,.7,.9,.9,"MC sample") #(xmin,ymin,xmax,ymax)
+leg = root.TLegend(.7,.7,.9,.9,"Sample") #(xmin,ymin,xmax,ymax)
 leg.AddEntry(jsonHist,"JSON data","l")
 leg.AddEntry(dyHist,"DY","l")
 
