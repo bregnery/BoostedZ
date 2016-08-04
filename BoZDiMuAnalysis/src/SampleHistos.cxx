@@ -81,21 +81,28 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
    std::cout << "Scale Factor: " << sample->getScaleFactor(luminosity) << std::endl;
 
    /////////////////////////////////////////////////////////////////////
+   // Save Histogram Vector---------------------------------------------
+   /////////////////////////////////////////////////////////////////////
+
+   histo1D.push_back(dimuonMassHist);
+   histo1D.push_back(dimuonPtHist);
+   histo1D.push_back(inverseDiMuPtHist);
+
+   /////////////////////////////////////////////////////////////////////
    // Scale Histograms--------------------------------------------------
    /////////////////////////////////////////////////////////////////////
 
-   dimuonMassHist->Scale(sample->getScaleFactor(luminosity));
-   dimuonPtHist->Scale(sample->getScaleFactor(luminosity));
-   inverseDiMuPtHist->Scale(sample->getScaleFactor(luminosity));
-  
+   for(std::vector<TH1F*>::const_iterator itr = histo1D.begin(); itr != histo1D.end(); itr++){
+	(*itr)->Scale(sample->getScaleFactor(luminosity) );
+   }
+	
    /////////////////////////////////////////////////////////////////////
    // Write Histograms--------------------------------------------------
    /////////////////////////////////////////////////////////////////////
 
-   dimuonMassHist->Write();
-   dimuonPtHist->Write();
-   inverseDiMuPtHist->Write();
-   file->Close();
+   for(std::vector<TH1F*>::const_iterator itr = histo1D.begin(); itr != histo1D.end(); itr++){
+	(*itr)->Write();
+   }
 }
 
 //////////////////////////////////////////////////////////////////
@@ -106,5 +113,14 @@ void SampleHistos::setHistTitles(TH1F* hist, TString xtitle, TString ytitle)
 {
   hist->GetXaxis()->SetTitle(xtitle);
   hist->GetYaxis()->SetTitle(ytitle);
+}
+
+//////////////////////////////////////////////////////////////////
+//--------------------------------------------------------------//
+//////////////////////////////////////////////////////////////////
+
+void SampleHistos::closeFile()
+{
+   file->Close();
 }
 

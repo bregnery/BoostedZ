@@ -23,7 +23,7 @@ jsonHist = json.Get("dimuonMassHist")
 xMin = 60
 xMax = 120
 yMin = 0
-yMax = 800000
+yMax = 350000
 xTitle = "M(#mu#mu) [GeV/c^{2}]"
 
 axisHist = root.TH2F("axisHist","M(#mu#mu)",1,xMin,xMax,1,yMin,yMax)

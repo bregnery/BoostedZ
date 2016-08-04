@@ -1,6 +1,7 @@
 #include "Sample.h"
 #include "../selection/Cuts.h"
 #include "SampleHistos.h"
+#include "Plots.h"
 
 #include "TLorentzVector.h"
 
@@ -91,7 +92,7 @@ int main()
     // map containg the Histogram variables
     std::map<std::string, SampleHistos*> sampleHistos;
 
-/*
+
     // Basic Cuts
     std::cout << "=========== Creating Data Histogram file ===========" << std::endl;
     sampleHistos["Data"] = new SampleHistos(samples["Data"], cuts["Data"]->isBoostedZprelim, "BasicCuts", luminosity);
@@ -99,8 +100,8 @@ int main()
     sampleHistos["DYJetsToLL"] = new SampleHistos(samples["DYJetsToLL"], cuts["DYJetsToLL"]->isBoostedZprelim, "BasicCuts", luminosity);
     std::cout << "=========== Creating TT MC Histogram file ==========" << std::endl;
     sampleHistos["TTJets"] = new SampleHistos(samples["TTJets"], cuts["TTJets"]->isBoostedZprelim, "BasicCuts", luminosity);
-*/
 
+/*
     // Run 1 Cuts
     std::cout << "=========== Creating Data Histogram file ===========" << std::endl;
     sampleHistos["Data"] = new SampleHistos(samples["Data"], cuts["Data"]->isRun1BoostedZ, "Run1Cuts", luminosity);
@@ -108,5 +109,24 @@ int main()
     sampleHistos["DYJetsToLL"] = new SampleHistos(samples["DYJetsToLL"], cuts["DYJetsToLL"]->isRun1BoostedZ, "Run1Cuts", luminosity);
     std::cout << "=========== Creating TT MC Histogram file ==========" << std::endl;
     sampleHistos["TTJets"] = new SampleHistos(samples["TTJets"], cuts["TTJets"]->isRun1BoostedZ, "Run1Cuts", luminosity);
+*/
+
+    ///////////////////////////////////////////////////////////////////
+    // Plots-----------------------------------------------------------
+    ///////////////////////////////////////////////////////////////////    
+
+    // Make Plots
+    std::cout << "=========== Creating Plots ===============" << std::endl;
+    Plots* plots = new Plots(samples, sampleHistos);
+
+    ///////////////////////////////////////////////////////////////////
+    // Close files-----------------------------------------------------
+    ///////////////////////////////////////////////////////////////////    
+
+    std::cout << "=========== Closing Files ================" << std::endl;
+    for(std::map<std::string, SampleHistos*>::const_iterator itr = sampleHistos.begin(); itr != sampleHistos.end(); itr++){
+	(*itr).second->closeFile();
+    }
+
     return 0;
 }

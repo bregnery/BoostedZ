@@ -23,7 +23,7 @@ jsonHist = json.Get("inverseDiMuPtHist")
 xMin = 0
 xMax = 0.02
 yMin = 0
-yMax = 15000
+yMax = 5000
 xTitle = "1/P_{T}(#mu#mu) [c/GeV]"
 
 axisHist = root.TH2F("axisHist","1/P_{T}(#mu#mu)",1,xMin,xMax,1,yMin,yMax)

@@ -19,10 +19,10 @@ CFLAGS = -I${LIBDIR} -c -g `root-config --cflags`
 MAIN = BoostedZAnalyzer
 
 # link all of the objects to the main program
-${MAIN}: ${LIBDIR}Sample.o ${SDIR}Cuts.o ${LIBDIR}SampleHistos.o ${MAIN}.o
-	$(CC) $(LIBFLAGS) ${LIBDIR}Sample.o ${SDIR}Cuts.o ${LIBDIR}SampleHistos.o ${MAIN}.o -o ${MAIN}
+${MAIN}: ${LIBDIR}Sample.o ${SDIR}Cuts.o ${LIBDIR}SampleHistos.o ${LIBDIR}Plots.o ${MAIN}.o
+	$(CC) $(LIBFLAGS) ${LIBDIR}Sample.o ${SDIR}Cuts.o ${LIBDIR}SampleHistos.o ${LIBDIR}Plots.o ${MAIN}.o -o ${MAIN}
 
-${MAIN}.o: ${MAIN}.cxx ${LIBDIR}DataFormats.h 
+${MAIN}.o: ${MAIN}.cxx ${LIBDIR}DataFormats.h ${LIBDIR}Plots.h 
 	$(CC) $(CFLAGS) ${MAIN}.cxx -o ${MAIN}.o
 
 # compile the dependencies
@@ -34,6 +34,9 @@ ${SDIR}Cuts.o: ${SDIR}Cuts.cxx ${SDIR}Cuts.h ${LIBDIR}Sample.h
 
 ${LIBDIR}SampleHistos.o: ${LIBDIR}SampleHistos.cxx ${LIBDIR}SampleHistos.h ${LIBDIR}Sample.h ${SDIR}Cuts.h
 	$(CC) $(CFLAGS) ${LIBDIR}SampleHistos.cxx -o ${LIBDIR}SampleHistos.o
+
+${LIBDIR}Plots.o: ${LIBDIR}Plots.cxx ${LIBDIR}Plots.h ${LIBDIR}SampleHistos.h ${LIBDIR}Sample.h ${SDIR}Cuts.h
+	$(CC) $(CFLAGS) ${LIBDIR}Plots.cxx -o ${LIBDIR}Plots.o
 
 clean:
 	rm *.o
