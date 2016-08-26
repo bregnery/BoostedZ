@@ -45,10 +45,12 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
    ////////////////////////////////////////////////////////////////////
 
 	
-    for(std::vector<TH1F*>::const_iterator j = histos["Data"]->histo1D.begin(); j != histos["Data"]->histo1D.end(); j++){
+    for(std::vector<TH1F*>::const_iterator j = histos["DYJetsToLL"]->histo1D.begin(); j != histos["DYJetsToLL"]->histo1D.end(); j++){
 	// Create the THStack
 	TString histoVarName((*j)->GetName());
 	THStack* stackTemp = new THStack(histoVarName, (*j)->GetTitle());
+	//stackTemp->GetXaxis()->SetTitle((*j)->GetLa );
+	//stackTemp->GetYaxis()->SetTitle((*j)->GetYaxis()->GetTitle() );
 	stackVec.push_back(stackTemp);
     }
 
@@ -61,6 +63,8 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	index = 0;
 
       	for(std::vector<TH1F*>::const_iterator j = (*itr).second->histo1D.begin(); j != (*itr).second->histo1D.end(); j++){
+
+	    TString histoVarName((*j)->GetName());
 
 	    // Set Histogram filling parameters
 	    (*j)->SetMarkerStyle(0);
@@ -86,7 +90,7 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	    if((*itr).first != "Data"){
 		
 		// Debugging
-		std::cout << "Adding " << (*itr).first << " to " << (*j)->GetTitle() << std::endl;
+		std::cout << "Adding " << (*itr).first << " to " <<  histoVarName << std::endl;
 
 		stackVec[index]->Add( (*j) );
 	    }
@@ -107,15 +111,18 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 
 	// Create Canvas
   	TCanvas* canvasTemp = new TCanvas("c" + histoVarName, "c" + histoVarName, width, height);
-	canvasTemp->SaveAs("Hist_" + histoVarName + ".png");
-	
+
 	// Draw Histograms
-	(*itr)->Draw("hist same");
-	histos["Data"]->histo1D[index]->Draw("SAMES");
+	(*itr)->Draw("hist");
+	histos["Data"]->histo1D[index]->Draw("same");
 	canvasTemp->SaveAs("Hist_" + histoVarName + ".png");
 
 	// Save Canvas Vector
 	canvas.push_back(canvasTemp);
+
+	// Debugging	
+	std::cout << "Saved canvas" << std::endl;
+
 	index++;
    }
 

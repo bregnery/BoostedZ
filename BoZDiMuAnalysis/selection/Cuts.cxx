@@ -76,7 +76,7 @@ void Cuts::Run1BoostedZ(int i)
    // Cut on Dimuon Pt
    if(sample->vars.recoCandPt >= 50){
    // Cut on individual muon pt
-   if(sample->vars.reco1.pt >= 45 && sample->vars.reco2.pt >= 45){
+   if(sample->vars.reco1.pt >= 45 || sample->vars.reco2.pt >= 45){
    // Opposite sign charges
    if(sample->vars.reco1.charge != sample->vars.reco2.charge){
    // Cut on the muon eta difference
