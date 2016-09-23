@@ -55,6 +55,12 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
    diffMuPtHist->SetStats(1);
    diffMuPtHist->Sumw2();
 
+   // Plot vertex norm chi square
+   TH1F* normChi2Hist = new TH1F("normChi2Hist","Dimuon Vertex Compatibility #Chi^{2}",100,-20,20);
+   setHistTitles(normChi2Hist,"#Chi^{2}","Events");
+   normChi2Hist->SetStats(1);
+   normChi2Hist->Sumw2();
+
    ////////////////////////////////////////////////////////////////////
    // Fill Histograms--------------------------------------------------
    ////////////////////////////////////////////////////////////////////
@@ -81,7 +87,8 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
 	dimuonPtHist->Fill(sample->vars.recoCandPt, sample->getWeight() );
 	inverseDiMuPtHist->Fill(sample->inverseDiMuPt[i], sample->getWeight() );
 	diffMuPtHist->Fill(sample->vars.reco1.pt - sample->vars.reco2.pt, sample->getWeight() );
-	
+	normChi2Hist->Fill(sample->vars.vertices.normChi2[1], sample->getWeight() );
+
    	////////////////////////////////////////////////////////////////////
    	// Scatter Plots----------------------------------------------------
    	////////////////////////////////////////////////////////////////////
@@ -101,6 +108,7 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
    histo1D.push_back(dimuonPtHist);
    histo1D.push_back(inverseDiMuPtHist);
    histo1D.push_back(diffMuPtHist);
+   histo1D.push_back(normChi2Hist);
 
    /////////////////////////////////////////////////////////////////////
    // Scale Histograms--------------------------------------------------

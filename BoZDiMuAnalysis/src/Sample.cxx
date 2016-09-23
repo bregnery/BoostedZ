@@ -91,6 +91,7 @@ void Sample::setBranchAddresses()
     tree->SetBranchAddress("recoCandYPF", &vars.recoCandYPF);
     tree->SetBranchAddress("recoCandPhiPF", &vars.recoCandPhiPF);
     tree->SetBranchAddress("rho", &vars.rho);
+    tree->SetBranchAddress("vertexInfo", &vars.vertices);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
