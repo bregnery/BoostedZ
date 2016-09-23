@@ -33,21 +33,27 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
    ///////////////////////////////////////////////////////////////////
 
    // Plots Mass of the Dimuons
-   TH1F* dimuonMassHist = new TH1F("dimuonMassHist","",50,60,120);
+   TH1F* dimuonMassHist = new TH1F("dimuonMassHist","Mass (#mu#mu)",50,60,120);
    setHistTitles(dimuonMassHist,"M(#mu#mu) [GeV/c^{2}]","Events");
    dimuonMassHist->Sumw2();
 
    // Plot the Dimuon Pt
-   TH1F* dimuonPtHist = new TH1F("dimuonPtHist","",100,0,2000);
+   TH1F* dimuonPtHist = new TH1F("dimuonPtHist","P_{T} (#mu#mu)",100,0,2000);
    setHistTitles(dimuonPtHist,"P_{T}(#mu#mu) [GeV/c]","Events");
    dimuonPtHist->SetStats(1);
    dimuonPtHist->Sumw2();
 
    // Plot the 1/mumuPt
-   TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","",100,0,0.02);
+   TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","Inverse P_{T} (#mu#mu)",100,0,0.02);
    setHistTitles(inverseDiMuPtHist,"1/P_{T}(#mu#mu) [c/GeV]","Events");
    inverseDiMuPtHist->SetStats(1);
    inverseDiMuPtHist->Sumw2();
+
+   // Plot Pt difference
+   TH1F* diffMuPtHist = new TH1F("diffMuPtHist","#Delta P_{T} (#mu)",100,0,200);
+   setHistTitles(diffMuPtHist,"P_{T}(#mu) [GeV/c]","Events");
+   diffMuPtHist->SetStats(1);
+   diffMuPtHist->Sumw2();
 
    ////////////////////////////////////////////////////////////////////
    // Fill Histograms--------------------------------------------------
@@ -74,7 +80,14 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
         dimuonMassHist->Fill(sample->vars.recoCandMass, sample->getWeight() );
 	dimuonPtHist->Fill(sample->vars.recoCandPt, sample->getWeight() );
 	inverseDiMuPtHist->Fill(sample->inverseDiMuPt[i], sample->getWeight() );
+	diffMuPtHist->Fill(sample->vars.reco1.pt - sample->vars.reco2.pt, sample->getWeight() );
 	
+   	////////////////////////////////////////////////////////////////////
+   	// Scatter Plots----------------------------------------------------
+   	////////////////////////////////////////////////////////////////////
+
+   	// Plot reco 1 Pt vs reco 2 Pt
+   	//TGraph
    }
    
    // Debugging
@@ -87,6 +100,7 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
    histo1D.push_back(dimuonMassHist);
    histo1D.push_back(dimuonPtHist);
    histo1D.push_back(inverseDiMuPtHist);
+   histo1D.push_back(diffMuPtHist);
 
    /////////////////////////////////////////////////////////////////////
    // Scale Histograms--------------------------------------------------

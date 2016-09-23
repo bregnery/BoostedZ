@@ -33,7 +33,7 @@ int main()
     //luminosity *= lumiSF;
     
     //float signalSF = 100;
-    
+   
     // ================================================================
     // Data -----------------------------------------------------------
     // ================================================================
@@ -48,7 +48,7 @@ int main()
     //datasample->pileupfile = "/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/pileup/old/PUCalib_Golden_71mb.root";
     //datasample->pileupfile = "/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/pileup/pileup_data_71mb.root";
     //samples["Data"] = datasample;
-    
+   
     // ================================================================
     // DYJetsToLL -----------------------------------------------------
     // ================================================================
@@ -92,16 +92,16 @@ int main()
     // map containg the Histogram variables
     std::map<std::string, SampleHistos*> sampleHistos;
 
-
+/*
     // Basic Cuts
     std::cout << "=========== Creating Data Histogram file ===========" << std::endl;
     sampleHistos["Data"] = new SampleHistos(samples["Data"], cuts["Data"]->isBoostedZprelim, "BasicCuts", luminosity);
-    std::cout << "=========== Creating DY MC Histogram file ==========" << std::endl;
-    sampleHistos["DYJetsToLL"] = new SampleHistos(samples["DYJetsToLL"], cuts["DYJetsToLL"]->isBoostedZprelim, "BasicCuts", luminosity);
     std::cout << "=========== Creating TT MC Histogram file ==========" << std::endl;
     sampleHistos["TTJets"] = new SampleHistos(samples["TTJets"], cuts["TTJets"]->isBoostedZprelim, "BasicCuts", luminosity);
+    std::cout << "=========== Creating DY MC Histogram file ==========" << std::endl;
+    sampleHistos["DYJetsToLL"] = new SampleHistos(samples["DYJetsToLL"], cuts["DYJetsToLL"]->isBoostedZprelim, "BasicCuts", luminosity);
+*/
 
-/*
     // Run 1 Cuts
     std::cout << "=========== Creating Data Histogram file ===========" << std::endl;
     sampleHistos["Data"] = new SampleHistos(samples["Data"], cuts["Data"]->isRun1BoostedZ, "Run1Cuts", luminosity);
@@ -109,7 +109,7 @@ int main()
     sampleHistos["DYJetsToLL"] = new SampleHistos(samples["DYJetsToLL"], cuts["DYJetsToLL"]->isRun1BoostedZ, "Run1Cuts", luminosity);
     std::cout << "=========== Creating TT MC Histogram file ==========" << std::endl;
     sampleHistos["TTJets"] = new SampleHistos(samples["TTJets"], cuts["TTJets"]->isRun1BoostedZ, "Run1Cuts", luminosity);
-*/
+
 
     ///////////////////////////////////////////////////////////////////
     // Plots-----------------------------------------------------------
