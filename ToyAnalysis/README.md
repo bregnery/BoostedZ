@@ -1,4 +1,7 @@
 # UFhmumuVariableStage
+
+This directory is here for documentation and reference purposes. The current program is in BoZDiMuAnalysis.
+
 This code calculates additional variables using the stage1 ntuples created by Justin's UFDiMuonsAnalyzer.
 
 Current path: Data -> UFDiMuonsAnalyzer -> UFhmumuVariableStage

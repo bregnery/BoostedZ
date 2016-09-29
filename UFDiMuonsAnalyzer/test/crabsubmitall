@@ -1,6 +1,0 @@
-#/bin/bash
-
-for f in crab_auto*.py; do
-   echo "submitting $f"
-   crab submit -c "$f"
-done
