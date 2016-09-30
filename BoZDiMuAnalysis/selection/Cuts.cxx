@@ -81,8 +81,15 @@ void Cuts::Run1BoostedZ(int i)
    if(sample->vars.reco1.charge != sample->vars.reco2.charge){
    // Cut on the muon eta difference
    if(sample->deltaEta[i] <= 1.0){
-       isRun1BoostedZ[i] = true;
-   }}}}}
+   // Cut on the primary vetex
+   for(unsigned j=0; j<20; j++){
+       if(sample->vars.vertices.isValid[j] == true){
+          if(sample->vars.vertices.normChi2[j] < 10){
+             isRun1BoostedZ[i] = true;
+	  }
+	  break;
+       }
+   }}}}}}
 }
 
 

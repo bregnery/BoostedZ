@@ -112,6 +112,9 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	// Create Canvas
   	TCanvas* canvasTemp = new TCanvas("c" + histoVarName, "c" + histoVarName, width, height);
 
+	// Log Y
+	canvasTemp->SetLogy(true);	
+
 	// Draw Histograms
 	(*itr)->Draw("hist");
 	histos["Data"]->histo1D[index]->Draw("same");

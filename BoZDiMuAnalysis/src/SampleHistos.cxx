@@ -38,13 +38,13 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
    dimuonMassHist->Sumw2();
 
    // Plot the Dimuon Pt
-   TH1F* dimuonPtHist = new TH1F("dimuonPtHist","P_{T} (#mu#mu)",100,0,2000);
+   TH1F* dimuonPtHist = new TH1F("dimuonPtHist","P_{T} (#mu#mu)",100,0,7000);
    setHistTitles(dimuonPtHist,"P_{T}(#mu#mu) [GeV/c]","Events");
    dimuonPtHist->SetStats(1);
    dimuonPtHist->Sumw2();
 
    // Plot the 1/mumuPt
-   TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","Inverse P_{T} (#mu#mu)",100,0,0.02);
+   TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","Inverse P_{T} (#mu#mu)",100,0,0.008);
    setHistTitles(inverseDiMuPtHist,"1/P_{T}(#mu#mu) [c/GeV]","Events");
    inverseDiMuPtHist->SetStats(1);
    inverseDiMuPtHist->Sumw2();
@@ -56,7 +56,7 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
    diffMuPtHist->Sumw2();
 
    // Plot vertex norm chi square
-   TH1F* normChi2Hist = new TH1F("normChi2Hist","Dimuon Vertex Compatibility #Chi^{2}",100,-20,20);
+   TH1F* normChi2Hist = new TH1F("normChi2Hist","Dimuon Vertex Compatibility #Chi^{2}",100,-5,20);
    setHistTitles(normChi2Hist,"#Chi^{2}","Events");
    normChi2Hist->SetStats(1);
    normChi2Hist->Sumw2();
@@ -87,7 +87,15 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
 	dimuonPtHist->Fill(sample->vars.recoCandPt, sample->getWeight() );
 	inverseDiMuPtHist->Fill(sample->inverseDiMuPt[i], sample->getWeight() );
 	diffMuPtHist->Fill(sample->vars.reco1.pt - sample->vars.reco2.pt, sample->getWeight() );
-	normChi2Hist->Fill(sample->vars.vertices.normChi2[1], sample->getWeight() );
+
+	// Find first valid vertex, i.e. primary vertex
+	for(unsigned i=0; i<20; i++)
+	{
+	   if(sample->vars.vertices.isValid[i] == true){
+		normChi2Hist->Fill(sample->vars.vertices.normChi2[i], sample->getWeight() );
+		break;
+	   }
+	}
 
    	////////////////////////////////////////////////////////////////////
    	// Scatter Plots----------------------------------------------------
