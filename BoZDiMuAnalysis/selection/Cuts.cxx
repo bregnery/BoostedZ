@@ -86,8 +86,8 @@ void Cuts::Run1BoostedZ(int i)
        if(sample->vars.vertices.isValid[j] == true){
           if(sample->vars.vertices.normChi2[j] < 10){
              isRun1BoostedZ[i] = true;
-	  }
-	  break;
+          }
+          break;
        }
    }}}}}}
 }

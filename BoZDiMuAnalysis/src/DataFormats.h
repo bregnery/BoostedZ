@@ -42,6 +42,9 @@ typedef struct {
   int isTracker;
   int isStandAlone;
   int isGlobal;
+  int isTighMuon;
+  int isMediumMuon;
+  int isLooseMuon;
 
   int charge;
   float pt;

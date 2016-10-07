@@ -38,7 +38,7 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
    dimuonMassHist->Sumw2();
 
    // Plot the Dimuon Pt
-   TH1F* dimuonPtHist = new TH1F("dimuonPtHist","P_{T} (#mu#mu)",100,0,7000);
+   TH1F* dimuonPtHist = new TH1F("dimuonPtHist","P_{T} (#mu#mu)",1000,0,8000);
    setHistTitles(dimuonPtHist,"P_{T}(#mu#mu) [GeV/c]","Events");
    dimuonPtHist->SetStats(1);
    dimuonPtHist->Sumw2();
@@ -56,7 +56,7 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
    diffMuPtHist->Sumw2();
 
    // Plot vertex norm chi square
-   TH1F* normChi2Hist = new TH1F("normChi2Hist","Dimuon Vertex Compatibility #Chi^{2}",100,-5,20);
+   TH1F* normChi2Hist = new TH1F("normChi2Hist","Dimuon Vertex Compatibility #Chi^{2}",100,0,10);
    setHistTitles(normChi2Hist,"#Chi^{2}","Events");
    normChi2Hist->SetStats(1);
    normChi2Hist->Sumw2();
