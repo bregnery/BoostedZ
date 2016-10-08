@@ -25,8 +25,9 @@ int main()
     ///////////////////////////////////////////////////////////////////
     // SAMPLES---------------------------------------------------------
     ///////////////////////////////////////////////////////////////////
-   
-    float luminosity = 2169;
+    
+    float luminosity = 15900;  // pb -1 (for 2016 BCDE)
+    // float luminosity = 2169; // pb -1 (for 2015 CD all)
     //float lumiSF = 10;
     
     // use this to scale the MC for some projected amount of luminosity
@@ -40,7 +41,8 @@ int main()
     
     std::cout << "============ Accessing Data ===============" << std::endl;           
     
-    TString datafilename = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data/25ns/golden/CMSSW_7_4_X/stage_1_singleMuon_RunCD_GOLDEN_ALL.root");
+    TString datafilename = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/data/stage_1_singleMuon_Run2016BCDE.root");
+    //TString datafilename = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data/25ns/golden/CMSSW_7_4_X/stage_1_singleMuon_RunCD_GOLDEN_ALL.root");
     //TString datafilename = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/stage_1_singleMuon_RunDBoth_MINIAOD_GOLDEN_ALL.root");
     samples["Data"] = new Sample(datafilename, "Data", "data");
     samples["Data"]->lumi = luminosity;
@@ -55,7 +57,8 @@ int main()
   
     std::cout << "========== Accessing DY Monte Carlo =========" << std::endl;
  
-    TString dyfilename   = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/mc/bg/dy/CMSSW_7_4_X/stage_1_dy_jetsToLL_ALL.root");
+    TString dyfilename  = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/mc/stage_1_dy_jetsToLL_1.root");
+    //TString dyfilename   = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/mc/bg/dy/CMSSW_7_4_X/stage_1_dy_jetsToLL_ALL.root");
     samples["DYJetsToLL"] = new Sample(dyfilename, "DYJetsToLL", "background");
     //samples["DYJetsToLL"]->pileupfile = "./pu_reweight_trees/PUCalib_gw_DYJetsToLL.root"; //nPU
     samples["DYJetsToLL"]->xsec = 6025.2; // pb
@@ -66,7 +69,7 @@ int main()
    
     std::cout << "========== Accessing TT Monte Carlo =========" << std::endl;
  
-    TString ttbarfilename   = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/mc/bg/ttbar/CMSSW_7_4_X/stage_1_ttJets_ALL.root");
+    TString ttbarfilename   = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/mc/stage_1_ttJets.root");
     samples["TTJets"] = new Sample(ttbarfilename, "TTJets", "background");
     //samples["TTJets"]->pileupfile = "./pu_reweight_trees/PUCalib_gw_TTJets.root"; //nPU
     samples["TTJets"]->xsec = 831.76; // pb
