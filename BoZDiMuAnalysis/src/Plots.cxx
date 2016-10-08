@@ -79,6 +79,21 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 		(*j)->SetFillColor(kGreen-1);
 		(*j)->SetLineColor(kGreen+1);
 	    }
+	    else if((*itr).first == "QstarZm1000"){
+		(*j)->SetFillColor(kMagenta-1);
+		(*j)->SetLineColor(kMagenta+1);
+		(*j)->SetFillStyle(3005);
+	    }
+	    else if((*itr).first == "QstarZm2000"){
+		(*j)->SetFillColor(kBlue-1);
+		(*j)->SetLineColor(kBlue+1);
+		(*j)->SetFillStyle(3005);
+	    }
+	    else if((*itr).first == "QstarZm5000"){
+		(*j)->SetFillColor(kTeal-1);
+		(*j)->SetLineColor(kTeal+1);
+		(*j)->SetFillStyle(3005);
+	    }
 	    else if((*itr).first == "Data"){
 		(*j)->SetFillColor(1);
 		(*j)->SetLineColor(1);
@@ -87,7 +102,7 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	    }
 
 	    // THStack the Monte Carlo
-	    if((*itr).first != "Data"){
+	    if((*itr).first == "DYJetsToLL" || (*itr).first == "TTJets"){
 		
 		// Debugging
 		std::cout << "Adding " << (*itr).first << " to " <<  histoVarName << std::endl;
@@ -113,7 +128,7 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
   	TCanvas* canvasTemp = new TCanvas("c" + histoVarName, "c" + histoVarName, width, height);
 
 	// Log Y
-	canvasTemp->SetLogy(true);	
+	//canvasTemp->SetLogy(true);	
 
 	// Draw Histograms
 	(*itr)->Draw("hist");

@@ -10,6 +10,23 @@ Event: 1000000
 Event: 2000000
 Event: 3000000
 Event: 4000000
+Event: 5000000
+Event: 6000000
+Event: 7000000
+Event: 8000000
+Event: 9000000
+Event: 10000000
+Event: 11000000
+Event: 12000000
+Event: 13000000
+Event: 14000000
+Event: 15000000
+Event: 16000000
+Event: 17000000
+Event: 18000000
+Event: 19000000
+Event: 20000000
+Event: 21000000
 =========== Applying Selection Criteria to DY MC ======
 Event: 0
 Event: 1000000
@@ -20,16 +37,29 @@ Event: 4000000
 Event: 0
 Event: 1000000
 Event: 2000000
-Event: 3000000
-Event: 4000000
-Event: 5000000
-Event: 6000000
 =========== Creating Data Histogram file ===========
 Event: 0
 Event: 1000000
 Event: 2000000
 Event: 3000000
 Event: 4000000
+Event: 5000000
+Event: 6000000
+Event: 7000000
+Event: 8000000
+Event: 9000000
+Event: 10000000
+Event: 11000000
+Event: 12000000
+Event: 13000000
+Event: 14000000
+Event: 15000000
+Event: 16000000
+Event: 17000000
+Event: 18000000
+Event: 19000000
+Event: 20000000
+Event: 21000000
 Scale Factor: 1
 =========== Creating DY MC Histogram file ==========
 Event: 0
@@ -37,24 +67,23 @@ Event: 1000000
 Event: 2000000
 Event: 3000000
 Event: 4000000
-Scale Factor: 0.67857
+Scale Factor: 4.98345
 =========== Creating TT MC Histogram file ==========
 Event: 0
 Event: 1000000
 Event: 2000000
-Event: 3000000
-Event: 4000000
-Event: 5000000
-Event: 6000000
-Scale Factor: 0.128487
+Scale Factor: 1.06358
 =========== Creating Plots ===============
 Adding DYJetsToLL to dimuonMassHist
 Adding DYJetsToLL to dimuonPtHist
 Adding DYJetsToLL to inverseDiMuPtHist
+Adding DYJetsToLL to diffMuPtHist
+Adding DYJetsToLL to normChi2Hist
 Adding TTJets to dimuonMassHist
 Adding TTJets to dimuonPtHist
 Adding TTJets to inverseDiMuPtHist
-Info in <TCanvas::Print>: png file Hist_dimuonMassHist.png has been created
+Adding TTJets to diffMuPtHist
+Adding TTJets to normChi2Hist
 
  *** Break *** segmentation violation
 
@@ -64,18 +93,28 @@ Info in <TCanvas::Print>: png file Hist_dimuonMassHist.png has been created
 There was a crash.
 This is the entire stack trace of all threads:
 ===========================================================
-#0  0x00000039ad2ac76e in waitpid () from /lib64/libc.so.6
-#1  0x00000039ad23e889 in do_system () from /lib64/libc.so.6
-#2  0x00002b3b252ace27 in TUnixSystem::StackTrace() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libCore.so
-#3  0x00002b3b252aedbc in TUnixSystem::DispatchSignals(ESignals) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libCore.so
+#0  0x00000030418ac65e in waitpid () from /lib64/libc.so.6
+#1  0x000000304183e609 in do_system () from /lib64/libc.so.6
+#2  0x00007f7d2931fe27 in TUnixSystem::StackTrace() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libCore.so
+#3  0x00007f7d29321dbc in TUnixSystem::DispatchSignals(ESignals) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libCore.so
 #4  <signal handler called>
-#5  0x00002b3b2526c9b1 in TClass::DynamicCast(TClass const*, void*, bool) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libCore.so
-#6  0x00002b3b25945247 in THStack::Paint(char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libHist.so
-#7  0x00002b3b25d21cec in TPad::Paint(char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGpad.so
-#8  0x00002b3b25d20c5f in TPad::Print(char const*, char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGpad.so
-#9  0x00002b3b25d21855 in TPad::SaveAs(char const*, char const*) const () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGpad.so
-#10 0x000000000041e48d in Plots::Plots (this=0x618e2c0, insample=..., inhistos=...) at ../src/Plots.cxx:117
-#11 0x00000000004239c6 in main () at BoostedZAnalyzer.cxx:120
+#5  0x0000003045c10a45 in ft_mem_free () from /usr/lib64/libfreetype.so.6
+#6  0x00007f7d2894f07e in TTF::LayoutGlyphs() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGraf.so
+#7  0x00007f7d1e276389 in TASImage::DrawText(TText*, int, int) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/lib/libASImage.so
+#8  0x00007f7d2857f7aa in TImageDump::Text(double, double, char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libPostscript.so
+#9  0x00007f7d28923464 in TLatex::Analyse(double, double, TextSpec_t, char const*, int) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGraf.so
+#10 0x00007f7d2891c840 in TLatex::Analyse(double, double, TextSpec_t, char const*, int) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGraf.so
+#11 0x00007f7d289249e3 in TLatex::PaintLatex1(double, double, double, double, char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGraf.so
+#12 0x00007f7d2892567c in TLatex::PaintLatex(double, double, double, double, char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGraf.so
+#13 0x00007f7d28911bf4 in TGaxis::PaintAxis(double, double, double, double, double&, double&, int&, char const*, double, bool) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGraf.so
+#14 0x00007f7d1e1b3162 in THistPainter::PaintAxis(bool) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/lib/libHistPainter.so
+#15 0x00007f7d1e19e0aa in THistPainter::Paint(char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/lib/libHistPainter.so
+#16 0x00007f7d28ba7500 in THStack::Paint(char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libHist.so
+#17 0x00007f7d287b1cec in TPad::Paint(char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGpad.so
+#18 0x00007f7d287b0c5f in TPad::Print(char const*, char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGpad.so
+#19 0x00007f7d287b1855 in TPad::SaveAs(char const*, char const*) const () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGpad.so
+#20 0x0000000000423047 in Plots::Plots (this=0x9acb190, insample=..., inhistos=...) at ../src/Plots.cxx:121
+#21 0x00000000004285d0 in main () at BoostedZAnalyzer.cxx:123
 ===========================================================
 
 
@@ -85,13 +124,23 @@ http://root.cern.ch/bugs. Please post the ENTIRE stack trace
 from above as an attachment in addition to anything else
 that might help us fixing this issue.
 ===========================================================
-#5  0x00002b3b2526c9b1 in TClass::DynamicCast(TClass const*, void*, bool) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libCore.so
-#6  0x00002b3b25945247 in THStack::Paint(char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libHist.so
-#7  0x00002b3b25d21cec in TPad::Paint(char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGpad.so
-#8  0x00002b3b25d20c5f in TPad::Print(char const*, char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGpad.so
-#9  0x00002b3b25d21855 in TPad::SaveAs(char const*, char const*) const () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGpad.so
-#10 0x000000000041e48d in Plots::Plots (this=0x618e2c0, insample=..., inhistos=...) at ../src/Plots.cxx:117
-#11 0x00000000004239c6 in main () at BoostedZAnalyzer.cxx:120
+#5  0x0000003045c10a45 in ft_mem_free () from /usr/lib64/libfreetype.so.6
+#6  0x00007f7d2894f07e in TTF::LayoutGlyphs() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGraf.so
+#7  0x00007f7d1e276389 in TASImage::DrawText(TText*, int, int) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/lib/libASImage.so
+#8  0x00007f7d2857f7aa in TImageDump::Text(double, double, char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libPostscript.so
+#9  0x00007f7d28923464 in TLatex::Analyse(double, double, TextSpec_t, char const*, int) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGraf.so
+#10 0x00007f7d2891c840 in TLatex::Analyse(double, double, TextSpec_t, char const*, int) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGraf.so
+#11 0x00007f7d289249e3 in TLatex::PaintLatex1(double, double, double, double, char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGraf.so
+#12 0x00007f7d2892567c in TLatex::PaintLatex(double, double, double, double, char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGraf.so
+#13 0x00007f7d28911bf4 in TGaxis::PaintAxis(double, double, double, double, double&, double&, int&, char const*, double, bool) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGraf.so
+#14 0x00007f7d1e1b3162 in THistPainter::PaintAxis(bool) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/lib/libHistPainter.so
+#15 0x00007f7d1e19e0aa in THistPainter::Paint(char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.00-odfocd2/lib/libHistPainter.so
+#16 0x00007f7d28ba7500 in THStack::Paint(char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libHist.so
+#17 0x00007f7d287b1cec in TPad::Paint(char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGpad.so
+#18 0x00007f7d287b0c5f in TPad::Print(char const*, char const*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGpad.so
+#19 0x00007f7d287b1855 in TPad::SaveAs(char const*, char const*) const () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_2/external/slc6_amd64_gcc491/lib/libGpad.so
+#20 0x0000000000423047 in Plots::Plots (this=0x9acb190, insample=..., inhistos=...) at ../src/Plots.cxx:121
+#21 0x00000000004285d0 in main () at BoostedZAnalyzer.cxx:123
 ===========================================================
 
 
