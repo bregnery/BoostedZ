@@ -120,6 +120,12 @@ int main()
     cuts["DYJetsToLL"] = new Cuts(samples["DYJetsToLL"]);
     std::cout << "=========== Applying Selection Criteria to TT MC ======" << std::endl;
     cuts["TTJets"] = new Cuts(samples["TTJets"]);
+    std::cout << "=========== Applying Selection Criteria to Qstar M-1000 MC ======" << std::endl;
+    cuts["QstarZm1000"] = new Cuts(samples["QstarZm1000"]);
+    std::cout << "=========== Applying Selection Criteria to Qstar M-2000 MC ======" << std::endl;
+    cuts["QstarZm2000"] = new Cuts(samples["QstarZm2000"]);
+    std::cout << "=========== Applying Selection Criteria to Qstar M-5000 MC ======" << std::endl;
+    cuts["QstarZm5000"] = new Cuts(samples["QstarZm5000"]);
 
     ///////////////////////////////////////////////////////////////////
     // Histograms------------------------------------------------------
@@ -145,6 +151,12 @@ int main()
     sampleHistos["DYJetsToLL"] = new SampleHistos(samples["DYJetsToLL"], cuts["DYJetsToLL"]->isRun1BoostedZ, "Run1Cuts", luminosity);
     std::cout << "=========== Creating TT MC Histogram file ==========" << std::endl;
     sampleHistos["TTJets"] = new SampleHistos(samples["TTJets"], cuts["TTJets"]->isRun1BoostedZ, "Run1Cuts", luminosity);
+    std::cout << "=========== Creating Qstar M-1000 MC Histogram file ==========" << std::endl;
+    sampleHistos["QstarZm1000"] = new SampleHistos(samples["QstarZm1000"], cuts["QstarZm1000"]->isRun1BoostedZ, "Run1Cuts", luminosity);
+    std::cout << "=========== Creating Qstar M-2000 MC Histogram file ==========" << std::endl;
+    sampleHistos["QstarZm2000"] = new SampleHistos(samples["QstarZm2000"], cuts["QstarZm2000"]->isRun1BoostedZ, "Run1Cuts", luminosity);
+    std::cout << "=========== Creating Qstar M-5000 MC Histogram file ==========" << std::endl;
+    sampleHistos["QstarZm5000"] = new SampleHistos(samples["QstarZm5000"], cuts["QstarZm5000"]->isRun1BoostedZ, "Run1Cuts", luminosity);
 
 
     ///////////////////////////////////////////////////////////////////

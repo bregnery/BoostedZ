@@ -82,17 +82,17 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	    else if((*itr).first == "QstarZm1000"){
 		(*j)->SetFillColor(kMagenta-1);
 		(*j)->SetLineColor(kMagenta+1);
-		(*j)->SetFillStyle(3005);
+		(*j)->SetFillStyle(3325);
 	    }
 	    else if((*itr).first == "QstarZm2000"){
 		(*j)->SetFillColor(kBlue-1);
 		(*j)->SetLineColor(kBlue+1);
-		(*j)->SetFillStyle(3005);
+		(*j)->SetFillStyle(3325);
 	    }
 	    else if((*itr).first == "QstarZm5000"){
 		(*j)->SetFillColor(kTeal-1);
 		(*j)->SetLineColor(kTeal+1);
-		(*j)->SetFillStyle(3005);
+		(*j)->SetFillStyle(3325);
 	    }
 	    else if((*itr).first == "Data"){
 		(*j)->SetFillColor(1);
@@ -133,6 +133,9 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	// Draw Histograms
 	(*itr)->Draw("hist");
 	histos["Data"]->histo1D[index]->Draw("same");
+	histos["QstarZm1000"]->histo1D[index]->Draw("same");
+	histos["QstarZm2000"]->histo1D[index]->Draw("same");
+	histos["QstarZm5000"]->histo1D[index]->Draw("same");
 	canvasTemp->SaveAs("Hist_" + histoVarName + ".png");
 
 	// Save Canvas Vector

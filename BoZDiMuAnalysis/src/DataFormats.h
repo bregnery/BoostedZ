@@ -42,7 +42,7 @@ typedef struct {
   int isTracker;
   int isStandAlone;
   int isGlobal;
-  int isTighMuon;
+  int isTightMuon;
   int isMediumMuon;
   int isLooseMuon;
 

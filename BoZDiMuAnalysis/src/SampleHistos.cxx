@@ -81,7 +81,8 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
 	//std::cout << "Mass: " << sample->vars.recoCandMass << std::endl;
 	//std::cout << "inverseDiMuPt: " << sample->inverseDiMuPt[i] << std::endl;
 	
-
+	//Debugging
+	//std::cout << "Event: " << i << " saved in histograms" << std::endl;
         // fill histograms
         dimuonMassHist->Fill(sample->vars.recoCandMass, sample->getWeight() );
 	dimuonPtHist->Fill(sample->vars.recoCandPt, sample->getWeight() );
