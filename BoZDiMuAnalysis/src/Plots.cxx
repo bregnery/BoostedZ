@@ -49,8 +49,6 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	// Create the THStack
 	TString histoVarName((*j)->GetName());
 	THStack* stackTemp = new THStack(histoVarName, (*j)->GetTitle());
-	//stackTemp->GetXaxis()->SetTitle((*j)->GetLa );
-	//stackTemp->GetYaxis()->SetTitle((*j)->GetYaxis()->GetTitle() );
 	stackVec.push_back(stackTemp);
     }
 
@@ -69,7 +67,6 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	    // Set Histogram filling parameters
 	    (*j)->SetMarkerStyle(0);
 	    (*j)->SetFillStyle(1);
-	    (*j)->GetYaxis()->SetTitleOffset(2.0);
 
 	    if((*itr).first == "DYJetsToLL"){
 		(*j)->SetFillColor(kOrange);
@@ -130,8 +127,16 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	// Log Y
 	//canvasTemp->SetLogy(true);	
 
-	// Draw Histograms
-	(*itr)->Draw("hist");
+	// Draw Histograms Update Axis titles
+	(*itr)->Draw("hist"); //Must draw before x and y axis can be modified
+	TString xtitle(histos["DYJetsToLL"]->histo1D[index]->GetXaxis()->GetTitle() );
+	TString ytitle(histos["DYJetsToLL"]->histo1D[index]->GetYaxis()->GetTitle() );
+		//Debugging
+		std::cout << xtitle << "    " << ytitle << std::endl;
+	(*itr)->GetXaxis()->SetTitle(xtitle);
+	(*itr)->GetYaxis()->SetTitle(ytitle);
+	(*itr)->GetYaxis()->SetTitleOffset(2.0);
+	canvasTemp->Modified();
 	histos["Data"]->histo1D[index]->Draw("same");
 	histos["QstarZm1000"]->histo1D[index]->Draw("same");
 	histos["QstarZm2000"]->histo1D[index]->Draw("same");
