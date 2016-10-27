@@ -1,0 +1,324 @@
+Beginning CMSSW wrapper script
+ slc6_amd64_gcc493 scramv1 CMSSW
+Performing SCRAM setup...
+Completed SCRAM setup
+Retrieving SCRAM project...
+Untarring  /var/condor/execute/dir_193277/glide_mCOPH0/execute/dir_2850671/sandbox.tar.gz
+Completed SCRAM project
+Executing CMSSW
+cmsRun  -j FrameworkJobReport.xml PSet.py
+07-Oct-2016 12:33:42 CDT  Initiating request to open file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/0A8D359E-9B2A-E611-8187-001E6724865B.root
+07-Oct-2016 12:33:47 CDT  Successfully opened file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/0A8D359E-9B2A-E611-8187-001E6724865B.root
+
+
+*** UFDiMuonsAnalyzer Configuration ***
+ - _isGlobal:         0
+ - _isTracker:        1
+ - _ptMin:            10
+ - _etaMax:           2.4
+ - _checkTrigger: 0
+ - Triggers To Probe:
+    * triggerNames[0]: HLT_IsoMu20
+    * triggerNames[1]: HLT_IsoTkMu20
+    * triggerNames[2]: HLT_IsoMu22
+    * triggerNames[3]: HLT_IsoTkMu22
+    * triggerNames[4]: HLT_IsoMu24
+    * triggerNames[5]: HLT_IsoTkMu24
+
+
+Begin processing the 1st record. Run 1, Event 55834313, LumiSection 222541 at 07-Oct-2016 12:33:49.635 CDT
+Begin processing the 1001st record. Run 1, Event 57337286, LumiSection 228509 at 07-Oct-2016 12:33:58.803 CDT
+Begin processing the 2001st record. Run 1, Event 57341931, LumiSection 228527 at 07-Oct-2016 12:34:04.020 CDT
+Begin processing the 3001st record. Run 1, Event 57416601, LumiSection 228824 at 07-Oct-2016 12:34:09.581 CDT
+Begin processing the 4001st record. Run 1, Event 57633169, LumiSection 229683 at 07-Oct-2016 12:34:14.089 CDT
+Begin processing the 5001st record. Run 1, Event 59286038, LumiSection 236299 at 07-Oct-2016 12:34:20.662 CDT
+Begin processing the 6001st record. Run 1, Event 59445918, LumiSection 236934 at 07-Oct-2016 12:34:25.162 CDT
+Begin processing the 7001st record. Run 1, Event 62103043, LumiSection 247484 at 07-Oct-2016 12:34:30.796 CDT
+Begin processing the 8001st record. Run 1, Event 62139005, LumiSection 247626 at 07-Oct-2016 12:34:36.191 CDT
+Begin processing the 9001st record. Run 1, Event 62601298, LumiSection 249516 at 07-Oct-2016 12:34:43.095 CDT
+Begin processing the 10001st record. Run 1, Event 62909675, LumiSection 250740 at 07-Oct-2016 12:34:48.834 CDT
+Begin processing the 11001st record. Run 1, Event 63084371, LumiSection 251434 at 07-Oct-2016 12:34:55.094 CDT
+Begin processing the 12001st record. Run 1, Event 63362659, LumiSection 252539 at 07-Oct-2016 12:35:00.737 CDT
+Begin processing the 13001st record. Run 1, Event 67465977, LumiSection 268884 at 07-Oct-2016 12:35:08.532 CDT
+Begin processing the 14001st record. Run 1, Event 73044235, LumiSection 291139 at 07-Oct-2016 12:35:13.064 CDT
+Begin processing the 15001st record. Run 1, Event 73050975, LumiSection 291165 at 07-Oct-2016 12:35:20.562 CDT
+Begin processing the 16001st record. Run 1, Event 73920646, LumiSection 294618 at 07-Oct-2016 12:35:26.440 CDT
+Begin processing the 17001st record. Run 1, Event 73935920, LumiSection 294679 at 07-Oct-2016 12:35:32.873 CDT
+07-Oct-2016 12:35:35 CDT  Closed file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/0A8D359E-9B2A-E611-8187-001E6724865B.root
+07-Oct-2016 12:35:35 CDT  Initiating request to open file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/30532D53-FE29-E611-BBA1-001E6724799A.root
+07-Oct-2016 12:35:37 CDT  Successfully opened file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/30532D53-FE29-E611-BBA1-001E6724799A.root
+Begin processing the 18001st record. Run 1, Event 155884, LumiSection 619 at 07-Oct-2016 12:35:45.847 CDT
+Begin processing the 19001st record. Run 1, Event 294206, LumiSection 1168 at 07-Oct-2016 12:35:51.477 CDT
+Begin processing the 20001st record. Run 1, Event 3250057, LumiSection 12904 at 07-Oct-2016 12:35:55.849 CDT
+Begin processing the 21001st record. Run 1, Event 2913578, LumiSection 11569 at 07-Oct-2016 12:36:02.777 CDT
+Begin processing the 22001st record. Run 1, Event 10656127, LumiSection 42470 at 07-Oct-2016 12:36:08.704 CDT
+Begin processing the 23001st record. Run 1, Event 10559008, LumiSection 42084 at 07-Oct-2016 12:36:15.115 CDT
+Begin processing the 24001st record. Run 1, Event 23652654, LumiSection 94232 at 07-Oct-2016 12:36:21.353 CDT
+Begin processing the 25001st record. Run 1, Event 23978991, LumiSection 95528 at 07-Oct-2016 12:36:27.850 CDT
+Begin processing the 26001st record. Run 1, Event 28729108, LumiSection 114495 at 07-Oct-2016 12:36:34.343 CDT
+Begin processing the 27001st record. Run 1, Event 54690390, LumiSection 217946 at 07-Oct-2016 12:36:40.090 CDT
+Begin processing the 28001st record. Run 1, Event 58210381, LumiSection 231975 at 07-Oct-2016 12:36:46.333 CDT
+Begin processing the 29001st record. Run 1, Event 58265398, LumiSection 232194 at 07-Oct-2016 12:36:54.255 CDT
+Begin processing the 30001st record. Run 1, Event 61834678, LumiSection 246418 at 07-Oct-2016 12:36:59.999 CDT
+Begin processing the 31001st record. Run 1, Event 63269716, LumiSection 252169 at 07-Oct-2016 12:37:07.241 CDT
+Begin processing the 32001st record. Run 1, Event 67583060, LumiSection 269348 at 07-Oct-2016 12:37:14.125 CDT
+Begin processing the 33001st record. Run 1, Event 71111934, LumiSection 283413 at 07-Oct-2016 12:37:18.638 CDT
+Begin processing the 34001st record. Run 1, Event 19672849, LumiSection 78377 at 07-Oct-2016 12:37:23.541 CDT
+Begin processing the 35001st record. Run 1, Event 13878360, LumiSection 55316 at 07-Oct-2016 12:37:30.622 CDT
+Begin processing the 36001st record. Run 1, Event 8225097, LumiSection 32764 at 07-Oct-2016 12:37:37.020 CDT
+Begin processing the 37001st record. Run 1, Event 9301045, LumiSection 37036 at 07-Oct-2016 12:37:44.235 CDT
+Begin processing the 38001st record. Run 1, Event 21012490, LumiSection 83749 at 07-Oct-2016 12:37:50.599 CDT
+Begin processing the 39001st record. Run 1, Event 14019101, LumiSection 55876 at 07-Oct-2016 12:37:57.088 CDT
+Begin processing the 40001st record. Run 1, Event 25489056, LumiSection 101577 at 07-Oct-2016 12:38:02.368 CDT
+Begin processing the 41001st record. Run 1, Event 30788744, LumiSection 122672 at 07-Oct-2016 12:38:09.854 CDT
+Begin processing the 42001st record. Run 1, Event 34047334, LumiSection 135663 at 07-Oct-2016 12:38:14.139 CDT
+Begin processing the 43001st record. Run 1, Event 42331713, LumiSection 168717 at 07-Oct-2016 12:38:21.074 CDT
+Begin processing the 44001st record. Run 1, Event 55530907, LumiSection 221336 at 07-Oct-2016 12:38:25.584 CDT
+Begin processing the 45001st record. Run 1, Event 73944331, LumiSection 294713 at 07-Oct-2016 12:38:31.864 CDT
+Begin processing the 46001st record. Run 1, Event 1209264, LumiSection 4802 at 07-Oct-2016 12:38:38.392 CDT
+Begin processing the 47001st record. Run 1, Event 13886470, LumiSection 55349 at 07-Oct-2016 12:38:46.146 CDT
+Begin processing the 48001st record. Run 1, Event 14161085, LumiSection 56439 at 07-Oct-2016 12:38:53.194 CDT
+Begin processing the 49001st record. Run 1, Event 24964242, LumiSection 99493 at 07-Oct-2016 12:39:00.552 CDT
+Begin processing the 50001st record. Run 1, Event 20747616, LumiSection 82644 at 07-Oct-2016 12:39:05.014 CDT
+Begin processing the 51001st record. Run 1, Event 21109953, LumiSection 84136 at 07-Oct-2016 12:39:10.378 CDT
+Begin processing the 52001st record. Run 1, Event 34502776, LumiSection 137472 at 07-Oct-2016 12:39:16.463 CDT
+Begin processing the 53001st record. Run 1, Event 37768313, LumiSection 150491 at 07-Oct-2016 12:39:21.428 CDT
+Begin processing the 54001st record. Run 1, Event 39186227, LumiSection 156173 at 07-Oct-2016 12:39:26.068 CDT
+Begin processing the 55001st record. Run 1, Event 45735966, LumiSection 182286 at 07-Oct-2016 12:39:31.968 CDT
+Begin processing the 56001st record. Run 1, Event 45768576, LumiSection 182416 at 07-Oct-2016 12:39:38.346 CDT
+Begin processing the 57001st record. Run 1, Event 51741197, LumiSection 206183 at 07-Oct-2016 12:39:45.434 CDT
+Begin processing the 58001st record. Run 1, Event 53964637, LumiSection 215064 at 07-Oct-2016 12:39:54.245 CDT
+Begin processing the 59001st record. Run 1, Event 54482820, LumiSection 217122 at 07-Oct-2016 12:39:58.586 CDT
+Begin processing the 60001st record. Run 1, Event 58118484, LumiSection 231610 at 07-Oct-2016 12:40:05.923 CDT
+Begin processing the 61001st record. Run 1, Event 59931842, LumiSection 238863 at 07-Oct-2016 12:40:12.097 CDT
+Begin processing the 62001st record. Run 1, Event 61038504, LumiSection 243257 at 07-Oct-2016 12:40:18.455 CDT
+Begin processing the 63001st record. Run 1, Event 63841282, LumiSection 254439 at 07-Oct-2016 12:40:25.291 CDT
+Begin processing the 64001st record. Run 1, Event 68936649, LumiSection 274723 at 07-Oct-2016 12:40:31.918 CDT
+Begin processing the 65001st record. Run 1, Event 6220510, LumiSection 24752 at 07-Oct-2016 12:40:38.213 CDT
+Begin processing the 66001st record. Run 1, Event 13554714, LumiSection 53979 at 07-Oct-2016 12:40:45.055 CDT
+07-Oct-2016 12:40:48 CDT  Closed file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/30532D53-FE29-E611-BBA1-001E6724799A.root
+07-Oct-2016 12:40:48 CDT  Initiating request to open file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/44D452C4-3B2A-E611-BDD1-0CC47A713A04.root
+07-Oct-2016 12:40:50 CDT  Successfully opened file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/44D452C4-3B2A-E611-BDD1-0CC47A713A04.root
+Begin processing the 67001st record. Run 1, Event 2967951, LumiSection 11785 at 07-Oct-2016 12:40:55.615 CDT
+Begin processing the 68001st record. Run 1, Event 3749186, LumiSection 14939 at 07-Oct-2016 12:41:00.945 CDT
+Begin processing the 69001st record. Run 1, Event 8285870, LumiSection 33006 at 07-Oct-2016 12:41:05.661 CDT
+Begin processing the 70001st record. Run 1, Event 8377480, LumiSection 33369 at 07-Oct-2016 12:41:11.950 CDT
+Begin processing the 71001st record. Run 1, Event 8667108, LumiSection 34519 at 07-Oct-2016 12:41:16.471 CDT
+Begin processing the 72001st record. Run 1, Event 30281124, LumiSection 120657 at 07-Oct-2016 12:41:22.535 CDT
+Begin processing the 73001st record. Run 1, Event 10945357, LumiSection 43618 at 07-Oct-2016 12:41:27.201 CDT
+Begin processing the 74001st record. Run 1, Event 10962559, LumiSection 43686 at 07-Oct-2016 12:41:34.204 CDT
+Begin processing the 75001st record. Run 1, Event 12973258, LumiSection 51670 at 07-Oct-2016 12:41:38.947 CDT
+Begin processing the 76001st record. Run 1, Event 12976336, LumiSection 51682 at 07-Oct-2016 12:41:44.225 CDT
+Begin processing the 77001st record. Run 1, Event 15448677, LumiSection 61552 at 07-Oct-2016 12:41:49.150 CDT
+Begin processing the 78001st record. Run 1, Event 18613185, LumiSection 74169 at 07-Oct-2016 12:41:56.916 CDT
+Begin processing the 79001st record. Run 1, Event 25336214, LumiSection 100970 at 07-Oct-2016 12:42:04.335 CDT
+Begin processing the 80001st record. Run 1, Event 25886989, LumiSection 103156 at 07-Oct-2016 12:42:10.462 CDT
+Begin processing the 81001st record. Run 1, Event 27810971, LumiSection 110849 at 07-Oct-2016 12:42:15.466 CDT
+Begin processing the 82001st record. Run 1, Event 28602221, LumiSection 113990 at 07-Oct-2016 12:42:22.212 CDT
+Begin processing the 83001st record. Run 1, Event 31160350, LumiSection 124148 at 07-Oct-2016 12:42:26.966 CDT
+Begin processing the 84001st record. Run 1, Event 33132339, LumiSection 132030 at 07-Oct-2016 12:42:33.688 CDT
+Begin processing the 85001st record. Run 1, Event 33776772, LumiSection 134589 at 07-Oct-2016 12:42:41.480 CDT
+Begin processing the 86001st record. Run 1, Event 3814422, LumiSection 15199 at 07-Oct-2016 12:42:49.459 CDT
+Begin processing the 87001st record. Run 1, Event 7501188, LumiSection 29890 at 07-Oct-2016 12:42:57.497 CDT
+Begin processing the 88001st record. Run 1, Event 15176233, LumiSection 60470 at 07-Oct-2016 12:43:04.014 CDT
+Begin processing the 89001st record. Run 1, Event 21504501, LumiSection 85703 at 07-Oct-2016 12:43:08.946 CDT
+Begin processing the 90001st record. Run 1, Event 21781034, LumiSection 86801 at 07-Oct-2016 12:43:14.409 CDT
+Begin processing the 91001st record. Run 1, Event 22525662, LumiSection 89758 at 07-Oct-2016 12:43:20.012 CDT
+Begin processing the 92001st record. Run 1, Event 27425970, LumiSection 109267 at 07-Oct-2016 12:43:26.722 CDT
+Begin processing the 93001st record. Run 1, Event 31690432, LumiSection 126305 at 07-Oct-2016 12:43:32.633 CDT
+Begin processing the 94001st record. Run 1, Event 32418419, LumiSection 129196 at 07-Oct-2016 12:43:37.899 CDT
+Begin processing the 95001st record. Run 1, Event 32598199, LumiSection 129910 at 07-Oct-2016 12:43:42.478 CDT
+Begin processing the 96001st record. Run 1, Event 35402234, LumiSection 141096 at 07-Oct-2016 12:43:47.758 CDT
+Begin processing the 97001st record. Run 1, Event 35505131, LumiSection 141505 at 07-Oct-2016 12:43:52.706 CDT
+Begin processing the 98001st record. Run 1, Event 36065825, LumiSection 143731 at 07-Oct-2016 12:43:57.996 CDT
+Begin processing the 99001st record. Run 1, Event 36117724, LumiSection 143937 at 07-Oct-2016 12:44:03.462 CDT
+Begin processing the 100001st record. Run 1, Event 47651236, LumiSection 189891 at 07-Oct-2016 12:44:09.227 CDT
+Begin processing the 101001st record. Run 1, Event 42066307, LumiSection 167662 at 07-Oct-2016 12:44:13.981 CDT
+Begin processing the 102001st record. Run 1, Event 47171589, LumiSection 187986 at 07-Oct-2016 12:44:19.838 CDT
+Begin processing the 103001st record. Run 1, Event 47289455, LumiSection 188454 at 07-Oct-2016 12:44:24.439 CDT
+Begin processing the 104001st record. Run 1, Event 54134354, LumiSection 215738 at 07-Oct-2016 12:44:29.748 CDT
+07-Oct-2016 12:44:34 CDT  Closed file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/44D452C4-3B2A-E611-BDD1-0CC47A713A04.root
+07-Oct-2016 12:44:34 CDT  Initiating request to open file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/90633954-FE29-E611-B95D-003048F34A5E.root
+07-Oct-2016 12:44:36 CDT  Successfully opened file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/90633954-FE29-E611-B95D-003048F34A5E.root
+Begin processing the 105001st record. Run 1, Event 20897971, LumiSection 83294 at 07-Oct-2016 12:44:41.510 CDT
+Begin processing the 106001st record. Run 1, Event 22593947, LumiSection 90029 at 07-Oct-2016 12:44:47.112 CDT
+Begin processing the 107001st record. Run 1, Event 33091225, LumiSection 131867 at 07-Oct-2016 12:44:52.959 CDT
+Begin processing the 108001st record. Run 1, Event 36479321, LumiSection 145373 at 07-Oct-2016 12:44:59.191 CDT
+Begin processing the 109001st record. Run 1, Event 36916064, LumiSection 147107 at 07-Oct-2016 12:45:05.017 CDT
+Begin processing the 110001st record. Run 1, Event 36922528, LumiSection 147133 at 07-Oct-2016 12:45:09.724 CDT
+Begin processing the 111001st record. Run 1, Event 37189392, LumiSection 148192 at 07-Oct-2016 12:45:16.532 CDT
+Begin processing the 112001st record. Run 1, Event 62589094, LumiSection 249467 at 07-Oct-2016 12:45:21.709 CDT
+Begin processing the 113001st record. Run 1, Event 56484610, LumiSection 225123 at 07-Oct-2016 12:45:26.557 CDT
+Begin processing the 114001st record. Run 1, Event 63889892, LumiSection 254632 at 07-Oct-2016 12:45:33.237 CDT
+Begin processing the 115001st record. Run 1, Event 67205966, LumiSection 267851 at 07-Oct-2016 12:45:38.738 CDT
+Begin processing the 116001st record. Run 1, Event 69465202, LumiSection 276875 at 07-Oct-2016 12:45:44.557 CDT
+Begin processing the 117001st record. Run 1, Event 27066881, LumiSection 107842 at 07-Oct-2016 12:45:51.215 CDT
+Begin processing the 118001st record. Run 1, Event 27249345, LumiSection 108566 at 07-Oct-2016 12:45:58.937 CDT
+Begin processing the 119001st record. Run 1, Event 30177833, LumiSection 120246 at 07-Oct-2016 12:46:07.398 CDT
+Begin processing the 120001st record. Run 1, Event 33815885, LumiSection 134745 at 07-Oct-2016 12:46:14.220 CDT
+Begin processing the 121001st record. Run 1, Event 35040560, LumiSection 139660 at 07-Oct-2016 12:46:20.697 CDT
+Begin processing the 122001st record. Run 1, Event 35429222, LumiSection 141203 at 07-Oct-2016 12:46:27.964 CDT
+Begin processing the 123001st record. Run 1, Event 35648719, LumiSection 142075 at 07-Oct-2016 12:46:32.410 CDT
+Begin processing the 124001st record. Run 1, Event 48539292, LumiSection 193470 at 07-Oct-2016 12:46:38.758 CDT
+Begin processing the 125001st record. Run 1, Event 36950137, LumiSection 147242 at 07-Oct-2016 12:46:44.335 CDT
+Begin processing the 126001st record. Run 1, Event 46164421, LumiSection 183987 at 07-Oct-2016 12:46:50.130 CDT
+Begin processing the 127001st record. Run 1, Event 42046516, LumiSection 167584 at 07-Oct-2016 12:46:55.644 CDT
+Begin processing the 128001st record. Run 1, Event 45824059, LumiSection 182636 at 07-Oct-2016 12:47:02.140 CDT
+Begin processing the 129001st record. Run 1, Event 46050970, LumiSection 183537 at 07-Oct-2016 12:47:08.743 CDT
+Begin processing the 130001st record. Run 1, Event 46330660, LumiSection 184647 at 07-Oct-2016 12:47:14.739 CDT
+Begin processing the 131001st record. Run 1, Event 46857064, LumiSection 186737 at 07-Oct-2016 12:47:20.700 CDT
+Begin processing the 132001st record. Run 1, Event 49747751, LumiSection 198268 at 07-Oct-2016 12:47:25.162 CDT
+Begin processing the 133001st record. Run 1, Event 49736231, LumiSection 198222 at 07-Oct-2016 12:47:31.814 CDT
+Begin processing the 134001st record. Run 1, Event 49740961, LumiSection 198240 at 07-Oct-2016 12:47:38.214 CDT
+Begin processing the 135001st record. Run 1, Event 49866631, LumiSection 198739 at 07-Oct-2016 12:47:45.191 CDT
+Begin processing the 136001st record. Run 1, Event 51728855, LumiSection 206134 at 07-Oct-2016 12:47:50.419 CDT
+Begin processing the 137001st record. Run 1, Event 51737672, LumiSection 206169 at 07-Oct-2016 12:47:57.868 CDT
+Begin processing the 138001st record. Run 1, Event 51755139, LumiSection 206238 at 07-Oct-2016 12:48:04.061 CDT
+Begin processing the 139001st record. Run 1, Event 51789422, LumiSection 206374 at 07-Oct-2016 12:48:12.501 CDT
+Begin processing the 140001st record. Run 1, Event 55458876, LumiSection 221050 at 07-Oct-2016 12:48:17.159 CDT
+Begin processing the 141001st record. Run 1, Event 55656963, LumiSection 221836 at 07-Oct-2016 12:48:23.558 CDT
+Begin processing the 142001st record. Run 1, Event 55708048, LumiSection 222039 at 07-Oct-2016 12:48:27.904 CDT
+Begin processing the 143001st record. Run 1, Event 38526557, LumiSection 153555 at 07-Oct-2016 12:48:35.329 CDT
+Begin processing the 144001st record. Run 1, Event 42726785, LumiSection 170285 at 07-Oct-2016 12:48:43.204 CDT
+Begin processing the 145001st record. Run 1, Event 42327278, LumiSection 168698 at 07-Oct-2016 12:48:51.275 CDT
+Begin processing the 146001st record. Run 1, Event 42796437, LumiSection 170561 at 07-Oct-2016 12:49:00.037 CDT
+Begin processing the 147001st record. Run 1, Event 55839382, LumiSection 222561 at 07-Oct-2016 12:49:05.455 CDT
+Begin processing the 148001st record. Run 1, Event 52794633, LumiSection 210419 at 07-Oct-2016 12:49:10.884 CDT
+Begin processing the 149001st record. Run 1, Event 56992307, LumiSection 227139 at 07-Oct-2016 12:49:18.480 CDT
+Begin processing the 150001st record. Run 1, Event 57085741, LumiSection 227510 at 07-Oct-2016 12:49:23.246 CDT
+Begin processing the 151001st record. Run 1, Event 57977571, LumiSection 231051 at 07-Oct-2016 12:49:27.860 CDT
+Begin processing the 152001st record. Run 1, Event 65505667, LumiSection 261047 at 07-Oct-2016 12:49:34.184 CDT
+Begin processing the 153001st record. Run 1, Event 61549736, LumiSection 245287 at 07-Oct-2016 12:49:39.520 CDT
+Begin processing the 154001st record. Run 1, Event 66735834, LumiSection 265984 at 07-Oct-2016 12:49:45.373 CDT
+07-Oct-2016 12:49:47 CDT  Closed file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/90633954-FE29-E611-B95D-003048F34A5E.root
+07-Oct-2016 12:49:47 CDT  Initiating request to open file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/BE8E2A68-3B2A-E611-8B7B-0CC47A713926.root
+07-Oct-2016 12:49:49 CDT  Successfully opened file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/BE8E2A68-3B2A-E611-8B7B-0CC47A713926.root
+Begin processing the 155001st record. Run 1, Event 9819299, LumiSection 39094 at 07-Oct-2016 12:49:55.644 CDT
+Begin processing the 156001st record. Run 1, Event 14240720, LumiSection 56756 at 07-Oct-2016 12:50:00.943 CDT
+Begin processing the 157001st record. Run 1, Event 24261391, LumiSection 96702 at 07-Oct-2016 12:50:06.447 CDT
+Begin processing the 158001st record. Run 1, Event 26358726, LumiSection 105029 at 07-Oct-2016 12:50:13.588 CDT
+Begin processing the 159001st record. Run 1, Event 33099569, LumiSection 131900 at 07-Oct-2016 12:50:19.185 CDT
+Begin processing the 160001st record. Run 1, Event 34978919, LumiSection 139416 at 07-Oct-2016 12:50:26.585 CDT
+Begin processing the 161001st record. Run 1, Event 39971583, LumiSection 159292 at 07-Oct-2016 12:50:31.041 CDT
+Begin processing the 162001st record. Run 1, Event 47971872, LumiSection 191164 at 07-Oct-2016 12:50:37.866 CDT
+Begin processing the 163001st record. Run 1, Event 48965947, LumiSection 195163 at 07-Oct-2016 12:50:43.800 CDT
+Begin processing the 164001st record. Run 1, Event 52248889, LumiSection 208251 at 07-Oct-2016 12:50:51.330 CDT
+Begin processing the 165001st record. Run 1, Event 62721856, LumiSection 249994 at 07-Oct-2016 12:50:56.925 CDT
+Begin processing the 166001st record. Run 1, Event 64764253, LumiSection 258104 at 07-Oct-2016 12:51:02.998 CDT
+Begin processing the 167001st record. Run 1, Event 73730685, LumiSection 293864 at 07-Oct-2016 12:51:09.742 CDT
+Begin processing the 168001st record. Run 1, Event 8709270, LumiSection 34686 at 07-Oct-2016 12:51:17.304 CDT
+Begin processing the 169001st record. Run 1, Event 9141005, LumiSection 36400 at 07-Oct-2016 12:51:24.381 CDT
+Begin processing the 170001st record. Run 1, Event 14836847, LumiSection 59123 at 07-Oct-2016 12:51:29.637 CDT
+Begin processing the 171001st record. Run 1, Event 18302001, LumiSection 72934 at 07-Oct-2016 12:51:35.004 CDT
+Begin processing the 172001st record. Run 1, Event 22346900, LumiSection 89048 at 07-Oct-2016 12:51:40.412 CDT
+Begin processing the 173001st record. Run 1, Event 23140692, LumiSection 92199 at 07-Oct-2016 12:51:45.159 CDT
+Begin processing the 174001st record. Run 1, Event 25536342, LumiSection 101764 at 07-Oct-2016 12:51:50.624 CDT
+Begin processing the 175001st record. Run 1, Event 28747764, LumiSection 114568 at 07-Oct-2016 12:51:56.172 CDT
+Begin processing the 176001st record. Run 1, Event 33337390, LumiSection 132845 at 07-Oct-2016 12:52:01.345 CDT
+Begin processing the 177001st record. Run 1, Event 34630772, LumiSection 138034 at 07-Oct-2016 12:52:06.824 CDT
+Begin processing the 178001st record. Run 1, Event 35646601, LumiSection 142067 at 07-Oct-2016 12:52:14.156 CDT
+Begin processing the 179001st record. Run 1, Event 36334391, LumiSection 144798 at 07-Oct-2016 12:52:18.869 CDT
+Begin processing the 180001st record. Run 1, Event 37565601, LumiSection 149686 at 07-Oct-2016 12:52:25.295 CDT
+Begin processing the 181001st record. Run 1, Event 37763976, LumiSection 150474 at 07-Oct-2016 12:52:30.601 CDT
+Begin processing the 182001st record. Run 1, Event 9829945, LumiSection 39136 at 07-Oct-2016 12:52:37.199 CDT
+Begin processing the 183001st record. Run 1, Event 22962062, LumiSection 91490 at 07-Oct-2016 12:52:42.440 CDT
+Begin processing the 184001st record. Run 1, Event 11403181, LumiSection 45436 at 07-Oct-2016 12:52:48.010 CDT
+Begin processing the 185001st record. Run 1, Event 22870098, LumiSection 91125 at 07-Oct-2016 12:52:52.676 CDT
+Begin processing the 186001st record. Run 1, Event 28651747, LumiSection 114187 at 07-Oct-2016 12:52:59.199 CDT
+Begin processing the 187001st record. Run 1, Event 32050450, LumiSection 127735 at 07-Oct-2016 12:53:05.657 CDT
+Begin processing the 188001st record. Run 1, Event 46021724, LumiSection 183421 at 07-Oct-2016 12:53:11.652 CDT
+Begin processing the 189001st record. Run 1, Event 46883921, LumiSection 186844 at 07-Oct-2016 12:53:15.774 CDT
+Begin processing the 190001st record. Run 1, Event 61607396, LumiSection 245516 at 07-Oct-2016 12:53:21.890 CDT
+Begin processing the 191001st record. Run 1, Event 56479507, LumiSection 225103 at 07-Oct-2016 12:53:26.399 CDT
+Begin processing the 192001st record. Run 1, Event 66887784, LumiSection 266588 at 07-Oct-2016 12:53:32.734 CDT
+Begin processing the 193001st record. Run 1, Event 71094194, LumiSection 283343 at 07-Oct-2016 12:53:37.366 CDT
+Begin processing the 194001st record. Run 1, Event 19907748, LumiSection 79310 at 07-Oct-2016 12:53:41.733 CDT
+Begin processing the 195001st record. Run 1, Event 64771576, LumiSection 258132 at 07-Oct-2016 12:53:48.894 CDT
+Begin processing the 196001st record. Run 1, Event 71895960, LumiSection 286526 at 07-Oct-2016 12:53:54.564 CDT
+Begin processing the 197001st record. Run 1, Event 67905497, LumiSection 270629 at 07-Oct-2016 12:53:59.981 CDT
+Begin processing the 198001st record. Run 1, Event 69088348, LumiSection 275325 at 07-Oct-2016 12:54:06.041 CDT
+Begin processing the 199001st record. Run 1, Event 74329034, LumiSection 296239 at 07-Oct-2016 12:54:10.961 CDT
+Begin processing the 200001st record. Run 1, Event 75854593, LumiSection 302298 at 07-Oct-2016 12:54:17.809 CDT
+07-Oct-2016 12:54:23 CDT  Closed file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/BE8E2A68-3B2A-E611-8B7B-0CC47A713926.root
+07-Oct-2016 12:54:23 CDT  Initiating request to open file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/FCE6FFDD-3B2A-E611-8D56-001E6724897B.root
+07-Oct-2016 12:54:25 CDT  Successfully opened file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/FCE6FFDD-3B2A-E611-8D56-001E6724897B.root
+Begin processing the 201001st record. Run 1, Event 3815826, LumiSection 15204 at 07-Oct-2016 12:54:28.991 CDT
+Begin processing the 202001st record. Run 1, Event 5951429, LumiSection 23683 at 07-Oct-2016 12:54:33.887 CDT
+Begin processing the 203001st record. Run 1, Event 7667118, LumiSection 30549 at 07-Oct-2016 12:54:39.109 CDT
+Begin processing the 204001st record. Run 1, Event 12639009, LumiSection 50343 at 07-Oct-2016 12:54:44.592 CDT
+Begin processing the 205001st record. Run 1, Event 14743390, LumiSection 58751 at 07-Oct-2016 12:54:50.247 CDT
+Begin processing the 206001st record. Run 1, Event 19600599, LumiSection 78091 at 07-Oct-2016 12:54:58.603 CDT
+Begin processing the 207001st record. Run 1, Event 18854720, LumiSection 75129 at 07-Oct-2016 12:55:05.357 CDT
+Begin processing the 208001st record. Run 1, Event 25119662, LumiSection 100110 at 07-Oct-2016 12:55:11.008 CDT
+Begin processing the 209001st record. Run 1, Event 21504004, LumiSection 85701 at 07-Oct-2016 12:55:15.745 CDT
+Begin processing the 210001st record. Run 1, Event 21967940, LumiSection 87542 at 07-Oct-2016 12:55:21.219 CDT
+Begin processing the 211001st record. Run 1, Event 22052856, LumiSection 87880 at 07-Oct-2016 12:55:25.736 CDT
+Begin processing the 212001st record. Run 1, Event 22662641, LumiSection 90302 at 07-Oct-2016 12:55:32.707 CDT
+Begin processing the 213001st record. Run 1, Event 22063224, LumiSection 87921 at 07-Oct-2016 12:55:38.766 CDT
+Begin processing the 214001st record. Run 1, Event 22530142, LumiSection 89775 at 07-Oct-2016 12:55:45.596 CDT
+Begin processing the 215001st record. Run 1, Event 22681098, LumiSection 90374 at 07-Oct-2016 12:55:50.188 CDT
+Begin processing the 216001st record. Run 1, Event 25017784, LumiSection 99706 at 07-Oct-2016 12:55:57.881 CDT
+Begin processing the 217001st record. Run 1, Event 25051011, LumiSection 99837 at 07-Oct-2016 12:56:02.588 CDT
+Begin processing the 218001st record. Run 1, Event 27417508, LumiSection 109234 at 07-Oct-2016 12:56:09.129 CDT
+Begin processing the 219001st record. Run 1, Event 27420698, LumiSection 109246 at 07-Oct-2016 12:56:13.912 CDT
+Begin processing the 220001st record. Run 1, Event 29587270, LumiSection 117901 at 07-Oct-2016 12:56:20.967 CDT
+Begin processing the 221001st record. Run 1, Event 10116485, LumiSection 40274 at 07-Oct-2016 12:56:25.868 CDT
+Begin processing the 222001st record. Run 1, Event 13755979, LumiSection 54778 at 07-Oct-2016 12:56:30.243 CDT
+Begin processing the 223001st record. Run 1, Event 12858174, LumiSection 51213 at 07-Oct-2016 12:56:35.810 CDT
+Begin processing the 224001st record. Run 1, Event 15146937, LumiSection 60354 at 07-Oct-2016 12:56:41.057 CDT
+Begin processing the 225001st record. Run 1, Event 15877555, LumiSection 63255 at 07-Oct-2016 12:56:46.448 CDT
+Begin processing the 226001st record. Run 1, Event 18594261, LumiSection 74095 at 07-Oct-2016 12:56:53.777 CDT
+Begin processing the 227001st record. Run 1, Event 18596917, LumiSection 74105 at 07-Oct-2016 12:57:00.526 CDT
+Begin processing the 228001st record. Run 1, Event 20620717, LumiSection 82140 at 07-Oct-2016 12:57:06.489 CDT
+Begin processing the 229001st record. Run 1, Event 21970311, LumiSection 87553 at 07-Oct-2016 12:57:11.761 CDT
+Begin processing the 230001st record. Run 1, Event 22057404, LumiSection 87898 at 07-Oct-2016 12:57:17.366 CDT
+Begin processing the 231001st record. Run 1, Event 22391742, LumiSection 89225 at 07-Oct-2016 12:57:22.870 CDT
+Begin processing the 232001st record. Run 1, Event 23320957, LumiSection 92915 at 07-Oct-2016 12:57:28.491 CDT
+Begin processing the 233001st record. Run 1, Event 23405127, LumiSection 93249 at 07-Oct-2016 12:57:33.580 CDT
+Begin processing the 234001st record. Run 1, Event 34562231, LumiSection 137708 at 07-Oct-2016 12:57:40.704 CDT
+Begin processing the 235001st record. Run 1, Event 25740355, LumiSection 102575 at 07-Oct-2016 12:57:45.683 CDT
+Begin processing the 236001st record. Run 1, Event 35394980, LumiSection 141068 at 07-Oct-2016 12:57:52.138 CDT
+Begin processing the 237001st record. Run 1, Event 35514325, LumiSection 141541 at 07-Oct-2016 12:57:58.540 CDT
+Begin processing the 238001st record. Run 1, Event 36114186, LumiSection 143923 at 07-Oct-2016 12:58:04.463 CDT
+Begin processing the 239001st record. Run 1, Event 36118768, LumiSection 143941 at 07-Oct-2016 12:58:10.337 CDT
+07-Oct-2016 12:58:11 CDT  Closed file root://cmsxrootd.hep.wisc.edu//store/mc/RunIISpring16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUSpring16_80X_mcRun2_asymptotic_2016_miniAODv2_v0-v1/50000/FCE6FFDD-3B2A-E611-8D56-001E6724897B.root
+Total Number of Events Read: 239223
+
+Number of events weighted: 160429
+
+number of dimuon candidates: 39011
+TimeReport> Time report complete in 1462.47 seconds
+ Time Summary: 
+ - Min event:   0.000329971
+ - Max event:   2.65281
+ - Avg event:   0.00565536
+ - Total loop:  1462.37
+ - Total job:   1462.47
+ Event Throughput: 163.586 ev/s
+ CPU Summary: 
+ - Total loop:  1357.21
+ - Total job:   1357.31
+
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 TimeReport           -e AfterModEndJob                         1        1
+    2 fileAction           -s file_close                             6        6
+    3 fileAction           -s file_open                             12       12
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 TimeReport           PostEndRun                        
+    2 fileAction           PostProcessEvent PostProcessEvent PostEndRun
+    3 fileAction           pre-events       pre-events       PostProcessEvent
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+Error                   1                   1
+System                 18                  18
+Complete
+process id is 2859819 status is 0

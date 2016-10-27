@@ -80,10 +80,10 @@ int main()
    
     std::cout << "========== Accessing QStar M-1000 Monte Carlo =========" << std::endl;
  
-    TString Qstar1000filename   = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/mc/stage_1_QstarToQZm1000_1.root");
+    TString Qstar1000filename   = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/BoostedZ/BoZDiMuAnalysis/analyzer/stage_1_QstarToQZm1000.root");
     samples["QstarZm1000"] = new Sample(Qstar1000filename, "QstarZm1000", "signal");
     //samples["TTJets"]->pileupfile = "./pu_reweight_trees/PUCalib_gw_TTJets.root"; //nPU
-    samples["QstarZm1000"]->xsec = 6025; // pb
+    samples["QstarZm1000"]->xsec = 3; // pb
 
     // ================================================================
     // QStar M-2000 ---------------------------------------------------
@@ -91,10 +91,10 @@ int main()
    
     std::cout << "========== Accessing QStar M-2000 Monte Carlo =========" << std::endl;
  
-    TString Qstar2000filename   = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/mc/stage_1_QstarToQZm2000_1.root");
+    TString Qstar2000filename   = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/BoostedZ/BoZDiMuAnalysis/analyzer/stage_1_QstarToQZm2000.root");
     samples["QstarZm2000"] = new Sample(Qstar2000filename, "QstarZm2000", "signal");
     //samples["TTJets"]->pileupfile = "./pu_reweight_trees/PUCalib_gw_TTJets.root"; //nPU
-    samples["QstarZm2000"]->xsec = 6025; // pb
+    samples["QstarZm2000"]->xsec = 3; // pb
 
     // ================================================================
     // QStar M-5000 ---------------------------------------------------
@@ -102,10 +102,10 @@ int main()
    
     std::cout << "========== Accessing QStar M-5000 Monte Carlo =========" << std::endl;
  
-    TString Qstar5000filename   = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/mc/stage_1_QstarToQZm5000_1.root");
+    TString Qstar5000filename   = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/BoostedZ/BoZDiMuAnalysis/analyzer/stage_1_QstarToQZm5000.root");
     samples["QstarZm5000"] = new Sample(Qstar5000filename, "QstarZm5000", "signal");
     //samples["TTJets"]->pileupfile = "./pu_reweight_trees/PUCalib_gw_TTJets.root"; //nPU
-    samples["QstarZm5000"]->xsec = 6025; // pb
+    samples["QstarZm5000"]->xsec = 3; // pb
 
     ///////////////////////////////////////////////////////////////////
     // Cuts------------------------------------------------------------
