@@ -1,2 +1,0 @@
-WARNING: In non-interactive mode release checks e.g. deprecated releases, production architectures are disabled.
-WARNING: There already exists /var/condor/execute/dir_193277/glide_mCOPH0/execute/dir_2850671/CMSSW_8_0_2 area for SCRAM_ARCH slc6_amd64_gcc493.
