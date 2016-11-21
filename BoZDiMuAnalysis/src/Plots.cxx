@@ -87,8 +87,8 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 		(*j)->SetFillStyle(3325);
 	    }
 	    else if((*itr).first == "QstarZm5000"){
-		(*j)->SetFillColor(kTeal-1);
-		(*j)->SetLineColor(kTeal+1);
+		(*j)->SetFillColor(kTeal+1);
+		(*j)->SetLineColor(kTeal-5);
 		(*j)->SetFillStyle(3325);
 	    }
 	    else if((*itr).first == "Data"){
@@ -137,14 +137,91 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	(*itr)->GetYaxis()->SetTitle(ytitle);
 	(*itr)->GetYaxis()->SetTitleOffset(2.0);
 	canvasTemp->Modified();
-	histos["Data"]->histo1D[index]->Draw("same");
-	histos["QstarZm1000"]->histo1D[index]->Draw("same");
-	histos["QstarZm2000"]->histo1D[index]->Draw("same");
-	histos["QstarZm5000"]->histo1D[index]->Draw("same");
-	canvasTemp->SaveAs("Hist_" + histoVarName + ".png");
+	//histos["QstarZm1000"]->histo1D[index]->Draw("hist same");
+	//histos["QstarZm2000"]->histo1D[index]->Draw("hist same");
+	//histos["QstarZm5000"]->histo1D[index]->Draw("hist same");
+	
+	// Fit the 1/pt data
+	if(histoVarName == "inverseDiMuPtHist"){
+	    TF1 *dyfunc = new TF1("dyfunc",dyfunction,0,0.008,4);
+	                      // change second to last number when changing the y bounds on the graph
+	    dyfunc->SetParameters(1,1,1,1);
+	    std::cout << "Made the fit function" << std::endl;
+ 
+	    // Fit the data
+	    histos["DYJetsToLL"]->histo1D[index]->Fit("dyfunc");
+	    std::cout << "Fit the data" << std::endl;
+
+	    // Inclusive plot
+            histos["DYJetsToLL"]->histo1D[index]->Draw("same");
+	    canvasTemp->SaveAs("Hist_" + histoVarName + ".png");
+
+	    // Create canvas with pad for residuals
+   	    //gStyle->SetPadBottomMargin(2.0);
+	    TCanvas* canvasFit = new TCanvas("cFit" + histoVarName, "c" + histoVarName, width, height);
+	    TPad *histopad = new TPad("histopad", "histopad",0.0,0.33,1.0,1.0); //xlow,ylow,xup,yup
+	    TPad *residualpad = new TPad("residualpad","residualpad",0.0,0.0,1.0,0.33);
+	    histopad->SetBottomMargin(0.00001);
+	    histopad->SetBorderMode(0);
+	    residualpad->SetTopMargin(0.00001);
+	    residualpad->SetBottomMargin(0.3);
+	    residualpad->SetBorderMode(0);
+	    histopad->Draw();
+	    residualpad->Draw();
+	    std::cout << "Made TPad" << std::endl;
+
+	    // plot the fit, data, and signal
+	    histopad->cd();
+	    histos["DYJetsToLL"]->histo1D[index]->SetStats(0);
+	    histos["DYJetsToLL"]->histo1D[index]->GetYaxis()->SetTitleSize(0.045);
+	    histos["DYJetsToLL"]->histo1D[index]->GetYaxis()->SetLabelSize(0.04);
+	    histos["DYJetsToLL"]->histo1D[index]->Draw(); // no string in the draw options shows fitted function
+	    //histos["QstarZm1000"]->histo1D[index]->Draw("hist same");
+	    //histos["QstarZm2000"]->histo1D[index]->Draw("hist same");
+	    //histos["QstarZm5000"]->histo1D[index]->Draw("hist same");	
+	    histopad->Update(); // can also add histopad->Modified() if statsbox is needed
+
+	    std::cout << "Drew Histogram" << std::endl;
+
+	    // plot the residuals
+	    residualpad->cd();
+   	    TH1F* residualHist = new TH1F("ResInverseDiMuPtHist","",100,0,0.008);
+	    residualHist->SetFillColor(kBlue-1);
+	    residualHist->SetLineColor(kBlue+1);
+	    residualHist->GetXaxis()->SetTitle("1/P_{T}(#mu#mu) [c/GeV]");
+	    residualHist->GetXaxis()->SetTitleSize(0.1);
+	    residualHist->GetXaxis()->SetTitleOffset(1.0);
+	    residualHist->GetXaxis()->SetLabelSize(0.09);
+	    residualHist->GetYaxis()->SetTitle("Ratio");
+	    residualHist->GetYaxis()->SetTitleSize(0.1);
+	    residualHist->GetYaxis()->SetTitleOffset(0.5);
+	    residualHist->GetYaxis()->SetLabelSize(0.09);
+	    for(int i = 1; i <= histos["DYJetsToLL"]->histo1D[index]->GetNbinsX(); i++){
+		double res = 0;
+		if(histos["DYJetsToLL"]->histo1D[index]->GetBinError(i) != 0){
+		    res = (histos["DYJetsToLL"]->histo1D[index]->GetBinContent(i) - dyfunc->Eval(histos["DYJetsToLL"]->histo1D[index]->GetBinCenter(i))) / histos["DYJetsToLL"]->histo1D[index]->GetBinError(i);
+		}
+		else if(histos["DYJetsToLL"]->histo1D[index]->GetBinError(i) == 0){
+		    res = histos["DYJetsToLL"]->histo1D[index]->GetBinContent(i) - dyfunc->Eval(histos["DYJetsToLL"]->histo1D[index]->GetBinCenter(i));
+		}
+		residualHist->SetBinContent(i,res);
+	    }
+	    residualHist->SetStats(0); 
+	    residualHist->Draw("hist"); 
+	    residualpad->Update(); 
+	
+	    // draw the plots
+	    canvasFit->cd();
+	    canvasFit->SaveAs("Hist_Fit" + histoVarName + ".png");   
+        } 
+	else if(histoVarName != "inverseDiMuPtHist"){
+	     //histos["Data"]->histo1D[index]->Draw("same");
+	     canvasTemp->SaveAs("Hist_" + histoVarName + ".png");
+	}
 
 	// Save Canvas Vector
 	canvas.push_back(canvasTemp);
+	
 
 	// Debugging	
 	std::cout << "Saved canvas" << std::endl;
@@ -188,3 +265,13 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 //----------------------------------------------------------------------
 ////////////////////////////////////////////////////////////////////////
 
+double Plots::dyfunction(double *ptrx, double *p)
+{
+    float x = ptrx[0];
+    double func = p[0]*TMath::Erf(p[1]*TMath::Power(x,p[2])-p[3])-p[0]*TMath::Erf(-p[3]);
+    return func;
+}
+
+////////////////////////////////////////////////////////////////////////
+//----------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////

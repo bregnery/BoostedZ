@@ -12,6 +12,8 @@
 #include "../selection/Cuts.h"
 
 #include "TH1F.h"
+#include "TF1.h"
+#include "TPad.h"
 #include "TH2F.h"
 #include "THStack.h"
 #include "TString.h"
@@ -32,6 +34,7 @@ class Plots
 	std::map<std::string, SampleHistos*> histos;
 	std::vector<TCanvas*> canvas;
 
+	static double dyfunction(double *ptrx, double *p);
 };
 
 #endif

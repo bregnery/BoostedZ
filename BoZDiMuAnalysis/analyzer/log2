@@ -1,0 +1,51 @@
+========== Accessing DY Monte Carlo =========
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+=========== Applying Selection Criteria to DY MC ======
+Event: 0
+Event: 1000000
+Event: 2000000
+Event: 3000000
+Event: 4000000
+=========== Creating DY MC Histogram file ==========
+Event: 0
+Event: 1000000
+Event: 2000000
+Event: 3000000
+Event: 4000000
+Scale Factor: 0.679818
+=========== Creating Plots ===============
+Adding DYJetsToLL to dimuonMassHist
+Adding DYJetsToLL to dimuonPtHist
+Adding DYJetsToLL to inverseDiMuPtHist
+Adding DYJetsToLL to diffMuPtHist
+Adding DYJetsToLL to normChi2Hist
+M(#mu#mu) [GeV/c^{2}]    Events
+Info in <TCanvas::Print>: png file Hist_dimuonMassHist.png has been created
+Saved canvas
+P_{T}(#mu#mu) [GeV/c]    Events
+Info in <TCanvas::Print>: png file Hist_dimuonPtHist.png has been created
+Saved canvas
+1/P_{T}(#mu#mu) [c/GeV]    Events
+Info in <TCanvas::Print>: png file Hist_inverseDiMuPtHist.png has been created
+Made the fit function
+Warning in <Fit>: Abnormal termination of minimization.
+ FCN=77.5649 FROM MIGRAD    STATUS=CALL LIMIT   1482 CALLS        1483 TOTAL
+                     EDM=0.00342593    STRATEGY= 1  ERROR MATRIX UNCERTAINTY   3.4 per cent
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           3.33340e+02   2.98347e+01  -4.24578e-01   2.75005e-02
+   2  p1           1.88916e+01   1.03333e+00   7.38145e-02   6.36844e+00
+   3  p2           1.14847e-01   1.87093e-02  -8.30400e-04  -6.20539e+02
+   4  p3           1.05549e+01   1.42916e+00   8.40771e-02  -1.15853e+01
+Fit the data
+Made TPad
+Drew Histogram
+Info in <TCanvas::Print>: png file Hist_FitinverseDiMuPtHist.png has been created
+Saved canvas
+P_{T}(#mu) [GeV/c]    Events
+Info in <TCanvas::Print>: png file Hist_diffMuPtHist.png has been created
+Saved canvas
+#Chi^{2}    Events
+Info in <TCanvas::Print>: png file Hist_normChi2Hist.png has been created
+Saved canvas
+=========== Closing Files ================

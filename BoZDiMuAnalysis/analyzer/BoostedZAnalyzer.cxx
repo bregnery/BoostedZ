@@ -26,7 +26,8 @@ int main()
     // SAMPLES---------------------------------------------------------
     ///////////////////////////////////////////////////////////////////
     
-    float luminosity = 15900;  // pb -1 (for 2016 BCDE)
+    //float luminosity = 27217; // pb -1 for 2016 BCDEFG 
+    float luminosity = 12900; // pb -1 (for 2016 BCDE)
     // float luminosity = 2169; // pb -1 (for 2015 CD all)
     //float lumiSF = 10;
     
@@ -83,7 +84,7 @@ int main()
     TString Qstar1000filename   = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/BoostedZ/BoZDiMuAnalysis/analyzer/stage_1_QstarToQZm1000.root");
     samples["QstarZm1000"] = new Sample(Qstar1000filename, "QstarZm1000", "signal");
     //samples["TTJets"]->pileupfile = "./pu_reweight_trees/PUCalib_gw_TTJets.root"; //nPU
-    samples["QstarZm1000"]->xsec = 3; // pb
+    samples["QstarZm1000"]->xsec = 12; // pb
 
     // ================================================================
     // QStar M-2000 ---------------------------------------------------
@@ -94,7 +95,7 @@ int main()
     TString Qstar2000filename   = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/BoostedZ/BoZDiMuAnalysis/analyzer/stage_1_QstarToQZm2000.root");
     samples["QstarZm2000"] = new Sample(Qstar2000filename, "QstarZm2000", "signal");
     //samples["TTJets"]->pileupfile = "./pu_reweight_trees/PUCalib_gw_TTJets.root"; //nPU
-    samples["QstarZm2000"]->xsec = 3; // pb
+    samples["QstarZm2000"]->xsec = 12; // pb
 
     // ================================================================
     // QStar M-5000 ---------------------------------------------------
@@ -105,7 +106,7 @@ int main()
     TString Qstar5000filename   = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/BoostedZ/BoZDiMuAnalysis/analyzer/stage_1_QstarToQZm5000.root");
     samples["QstarZm5000"] = new Sample(Qstar5000filename, "QstarZm5000", "signal");
     //samples["TTJets"]->pileupfile = "./pu_reweight_trees/PUCalib_gw_TTJets.root"; //nPU
-    samples["QstarZm5000"]->xsec = 3; // pb
+    samples["QstarZm5000"]->xsec = 12; // pb
 
     ///////////////////////////////////////////////////////////////////
     // Cuts------------------------------------------------------------
