@@ -1,0 +1,164 @@
+============ Accessing Data ===============
+Error in <TTree::SetBranchAddress>: unknown branch -> nPU
+Error in <TTree::SetBranchAddress>: unknown branch -> genWeight
+Info in <TCanvas::MakeDefCanvas>:  created default TCanvas with name c1
+========== Accessing DY Monte Carlo =========
+========== Accessing TT Monte Carlo =========
+========== Accessing QStar M-1000 Monte Carlo =========
+========== Accessing QStar M-2000 Monte Carlo =========
+========== Accessing QStar M-5000 Monte Carlo =========
+=========== Applying Selection Criteria to Data ======
+Event: 0
+Event: 1000000
+Event: 2000000
+Event: 3000000
+Event: 4000000
+Event: 5000000
+Event: 6000000
+Event: 7000000
+Event: 8000000
+Event: 9000000
+Event: 10000000
+Event: 11000000
+Event: 12000000
+Event: 13000000
+Event: 14000000
+Event: 15000000
+Event: 16000000
+Event: 17000000
+Event: 18000000
+Event: 19000000
+Event: 20000000
+Event: 21000000
+Event: 22000000
+Event: 23000000
+Event: 24000000
+Event: 25000000
+Event: 26000000
+Event: 27000000
+Event: 28000000
+Event: 29000000
+Event: 30000000
+Event: 31000000
+Event: 32000000
+Event: 33000000
+Event: 34000000
+Event: 35000000
+Event: 36000000
+=========== Applying Selection Criteria to DY MC ======
+Event: 0
+Event: 1000000
+Event: 2000000
+Event: 3000000
+Event: 4000000
+=========== Applying Selection Criteria to TT MC ======
+Event: 0
+Event: 1000000
+Event: 2000000
+=========== Applying Selection Criteria to Qstar M-1000 MC ======
+Event: 0
+=========== Applying Selection Criteria to Qstar M-2000 MC ======
+Event: 0
+=========== Applying Selection Criteria to Qstar M-5000 MC ======
+Event: 0
+=========== Creating Data Histogram file ===========
+Event: 0
+Event: 1000000
+Event: 2000000
+Event: 3000000
+Event: 4000000
+Event: 5000000
+Event: 6000000
+Event: 7000000
+Event: 8000000
+Event: 9000000
+Event: 10000000
+Event: 11000000
+Event: 12000000
+Event: 13000000
+Event: 14000000
+Event: 15000000
+Event: 16000000
+Event: 17000000
+Event: 18000000
+Event: 19000000
+Event: 20000000
+Event: 21000000
+Event: 22000000
+Event: 23000000
+Event: 24000000
+Event: 25000000
+Event: 26000000
+Event: 27000000
+Event: 28000000
+Event: 29000000
+Event: 30000000
+Event: 31000000
+Event: 32000000
+Event: 33000000
+Event: 34000000
+Event: 35000000
+Event: 36000000
+Scale Factor: 1
+=========== Creating DY MC Histogram file ==========
+Event: 0
+Event: 1000000
+Event: 2000000
+Event: 3000000
+Event: 4000000
+Scale Factor: 7.5222
+=========== Creating TT MC Histogram file ==========
+Event: 0
+Event: 1000000
+Event: 2000000
+Scale Factor: 1.60541
+=========== Creating Qstar M-1000 MC Histogram file ==========
+Event: 0
+Scale Factor: 9.64404
+=========== Creating Qstar M-2000 MC Histogram file ==========
+Event: 0
+Scale Factor: 9.68979
+=========== Creating Qstar M-5000 MC Histogram file ==========
+Event: 0
+Scale Factor: 9.64178
+=========== Creating Plots ===============
+Adding DYJetsToLL to dimuonMassHist
+Adding DYJetsToLL to dimuonPtHist
+Adding DYJetsToLL to inverseDiMuPtHist
+Adding DYJetsToLL to diffMuPtHist
+Adding DYJetsToLL to normChi2Hist
+Adding TTJets to dimuonMassHist
+Adding TTJets to dimuonPtHist
+Adding TTJets to inverseDiMuPtHist
+Adding TTJets to diffMuPtHist
+Adding TTJets to normChi2Hist
+M(#mu#mu) [GeV]    Events
+Info in <TCanvas::Print>: png file Hist_dimuonMassHist.png has been created
+Saved canvas
+P_{T}(#mu#mu) [GeV]    Events
+Info in <TCanvas::Print>: png file Hist_dimuonPtHist.png has been created
+Saved canvas
+1/P_{T}(#mu#mu) [1/GeV]    Events / (0.0001)
+Made the fit function
+Warning in <Fit>: Abnormal termination of minimization.
+ FCN=106.821 FROM MIGRAD    STATUS=CALL LIMIT   1487 CALLS        1488 TOTAL
+                     EDM=0.283041    STRATEGY= 1      ERR MATRIX NOT POS-DEF
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME      VALUE            ERROR          SIZE      DERIVATIVE 
+   1  p0           4.03140e+03   6.49108e+01   4.45640e+00   7.50712e-02
+   2  p1           2.00424e+01   1.77373e-01   1.41039e-02   1.73550e+02
+   3  p2           1.52128e-01   4.57793e-03  -9.85356e-04  -1.89368e+04
+   4  p3           9.11168e+00   2.07696e-01   5.33810e-02  -4.01538e+02
+Fit the data
+Info in <TCanvas::Print>: png file Hist_inverseDiMuPtHist.png has been created
+Made TPad
+Drew Histogram
+Info in <TCanvas::Print>: png file Hist_FitinverseDiMuPtHist.png has been created
+Saved canvas
+P_{T}(#mu) [GeV]    Events
+Info in <TCanvas::Print>: png file Hist_diffMuPtHist.png has been created
+Saved canvas
+#Chi^{2}    Events
+Info in <TCanvas::Print>: png file Hist_normChi2Hist.png has been created
+Saved canvas
+=========== Closing Files ================

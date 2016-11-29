@@ -34,24 +34,26 @@ SampleHistos::SampleHistos(Sample* sample, std::vector<bool> isCut, TString cutN
 
    // Plots Mass of the Dimuons
    TH1F* dimuonMassHist = new TH1F("dimuonMassHist","Mass (#mu#mu)",50,60,120);
-   setHistTitles(dimuonMassHist,"M(#mu#mu) [GeV/c^{2}]","Events");
+   setHistTitles(dimuonMassHist,"M(#mu#mu) [GeV]","Events");
    dimuonMassHist->Sumw2();
 
    // Plot the Dimuon Pt
    TH1F* dimuonPtHist = new TH1F("dimuonPtHist","P_{T} (#mu#mu)",1000,0,8000);
-   setHistTitles(dimuonPtHist,"P_{T}(#mu#mu) [GeV/c]","Events");
+   setHistTitles(dimuonPtHist,"P_{T}(#mu#mu) [GeV]","Events");
    dimuonPtHist->SetStats(1);
    dimuonPtHist->Sumw2();
 
    // Plot the 1/mumuPt
-   TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","Inverse P_{T} (#mu#mu)",100,0,0.008);
-   setHistTitles(inverseDiMuPtHist,"1/P_{T}(#mu#mu) [c/GeV]","Events");
+   //TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","CMS, 24.9 fb^{-1} at #sqrt{s}=13 TeV",100,0,0.02);
+   TH1F* inverseDiMuPtHist = new TH1F("inverseDiMuPtHist","CMS, 24.9 fb^{-1} at #sqrt{s}=13 TeV",80,0,0.008);
+   //setHistTitles(inverseDiMuPtHist,"1/P_{T}(#mu#mu) [GeV^{-1}]","Events / 0.0002 [GeV^{-1}]");
+   setHistTitles(inverseDiMuPtHist,"1/P_{T}(#mu#mu) [GeV^{-1}]","Events / 0.0001 [GeV^{-1}]");
    inverseDiMuPtHist->SetStats(1);
    inverseDiMuPtHist->Sumw2();
 
    // Plot Pt difference
    TH1F* diffMuPtHist = new TH1F("diffMuPtHist","#Delta P_{T} (#mu)",100,0,200);
-   setHistTitles(diffMuPtHist,"P_{T}(#mu) [GeV/c]","Events");
+   setHistTitles(diffMuPtHist,"P_{T}(#mu) [GeV]","Events");
    diffMuPtHist->SetStats(1);
    diffMuPtHist->Sumw2();
 

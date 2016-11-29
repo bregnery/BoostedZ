@@ -16,8 +16,8 @@ SDIR = ../selection/
 CFLAGS = -I${LIBDIR} -c -g `root-config --cflags`
 
 # The name of the .cxx file you want to compile into an executable
-#MAIN = BoostedZAnalyzer
-MAIN = Debug
+MAIN = BoostedZAnalyzer
+#MAIN = Debug
 
 # link all of the objects to the main program
 ${MAIN}: ${LIBDIR}Sample.o ${SDIR}Cuts.o ${LIBDIR}SampleHistos.o ${LIBDIR}Plots.o ${MAIN}.o

@@ -23,6 +23,8 @@
 #include "TGraphErrors.h"
 #include "TStyle.h"
 #include "TROOT.h"
+#include "TLegend.h"
+#include "TPaveStats.h"
 
 class Plots
 {

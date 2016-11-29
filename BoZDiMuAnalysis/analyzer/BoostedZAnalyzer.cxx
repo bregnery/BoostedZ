@@ -26,8 +26,9 @@ int main()
     // SAMPLES---------------------------------------------------------
     ///////////////////////////////////////////////////////////////////
     
+    float luminosity = 24000; // pb -1 for 2016 BCDEFG 
     //float luminosity = 27217; // pb -1 for 2016 BCDEFG 
-    float luminosity = 12900; // pb -1 (for 2016 BCDE)
+    //float luminosity = 12900; // pb -1 (for 2016 BCDE)
     // float luminosity = 2169; // pb -1 (for 2015 CD all)
     //float lumiSF = 10;
     
@@ -42,7 +43,8 @@ int main()
     
     std::cout << "============ Accessing Data ===============" << std::endl;           
     
-    TString datafilename = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/data/stage_1_singleMuon_Run2016BCDE.root");
+    TString datafilename = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/data/stage_1_singleMuon_Run2016BCDEFG.root");
+    //TString datafilename = TString("/home/bregnery/BoostedZ/CMSSW_8_0_9/src/data/stage_1_singleMuon_Run2016BCDE.root");
     //TString datafilename = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data/25ns/golden/CMSSW_7_4_X/stage_1_singleMuon_RunCD_GOLDEN_ALL.root");
     //TString datafilename = TString("/cms/data/store/user/t2/users/acarnes/h2mumu/samples/stage1/data_from_json/25ns/golden/stage_1_singleMuon_RunDBoth_MINIAOD_GOLDEN_ALL.root");
     samples["Data"] = new Sample(datafilename, "Data", "data");

@@ -38,6 +38,11 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
    double height = 1000;
 
    gStyle->SetPadLeftMargin(0.15);
+   gStyle->SetLegendBorderSize(0);
+   gStyle->SetTitleSize(0.04,"t");
+   gStyle->SetOptFit(0101);
+   //gStyle->SetTitleOffset(0.02,"t");
+   //gStyle->SetTitleAlign(13);
    //gROOT->SetBatch();
 
    ////////////////////////////////////////////////////////////////////
@@ -99,11 +104,12 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	    }
 
 	    // THStack the Monte Carlo
-	    if((*itr).first == "DYJetsToLL" || (*itr).first == "TTJets"){
+	    if((*itr).first == "DYJetsToLL" ){ // || (*itr).first == "TTJets"){
 		
 		// Debugging
 		std::cout << "Adding " << (*itr).first << " to " <<  histoVarName << std::endl;
-
+		
+		stackVec[index]->Add(histos["TTJets"]->histo1D[index]);
 		stackVec[index]->Add( (*j) );
 	    }
 
@@ -127,6 +133,12 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	// Log Y
 	//canvasTemp->SetLogy(true);	
 
+	//Create line for legend
+	TF1 *f1=new TF1("f1","2*x",0,0.008);
+	f1->SetLineColor(kRed);
+	f1->SetLineWidth(1);
+	f1->Draw();
+
 	// Draw Histograms Update Axis titles
 	(*itr)->Draw("hist"); //Must draw before x and y axis can be modified
 	TString xtitle(histos["DYJetsToLL"]->histo1D[index]->GetXaxis()->GetTitle() );
@@ -134,36 +146,56 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 		//Debugging
 		std::cout << xtitle << "    " << ytitle << std::endl;
 	(*itr)->GetXaxis()->SetTitle(xtitle);
+	(*itr)->GetXaxis()->SetLabelSize(0.025);
 	(*itr)->GetYaxis()->SetTitle(ytitle);
 	(*itr)->GetYaxis()->SetTitleOffset(2.0);
 	canvasTemp->Modified();
-	//histos["QstarZm1000"]->histo1D[index]->Draw("hist same");
-	//histos["QstarZm2000"]->histo1D[index]->Draw("hist same");
-	//histos["QstarZm5000"]->histo1D[index]->Draw("hist same");
+	histos["QstarZm1000"]->histo1D[index]->Draw("hist same");
+	histos["QstarZm2000"]->histo1D[index]->Draw("hist same");
+	histos["QstarZm5000"]->histo1D[index]->Draw("hist same");
+
+	//Create a legend
+	TLegend *leg = new TLegend(.2,.55,.5,.85," ");
+	leg->AddEntry(f1,"F(x) = p0 (erf(p1 #bullet x^{p2} - p3) - erf(-p3))", "l");
+	leg->AddEntry(histos["Data"]->histo1D[index],"2016 Data", "ep");
+	leg->AddEntry(histos["DYJetsToLL"]->histo1D[index],"DY Z + Jets", "f");
+	leg->AddEntry(histos["TTJets"]->histo1D[index],"tt", "f");
+	leg->AddEntry(histos["QstarZm1000"]->histo1D[index],"M_{q*} = 1.0 TeV", "f");
+	leg->AddEntry(histos["QstarZm2000"]->histo1D[index],"M_{q*} = 2.0 TeV", "f");
+	leg->AddEntry(histos["QstarZm5000"]->histo1D[index],"M_{q*} = 5.0 TeV", "f");
 	
 	// Fit the 1/pt data
 	if(histoVarName == "inverseDiMuPtHist"){
+            histos["Data"]->histo1D[index]->Draw("same");
 	    TF1 *dyfunc = new TF1("dyfunc",dyfunction,0,0.008,4);
 	                      // change second to last number when changing the y bounds on the graph
 	    dyfunc->SetParameters(1,1,1,1);
 	    std::cout << "Made the fit function" << std::endl;
  
 	    // Fit the data
-	    histos["DYJetsToLL"]->histo1D[index]->Fit("dyfunc");
+	    // Debug Version
+	    //histos["DYJetsToLL"]->histo1D[index]->Fit("dyfunc");
+	    // Full Analysis Version
+	    histos["Data"]->histo1D[index]->Fit("dyfunc");
 	    std::cout << "Fit the data" << std::endl;
 
 	    // Inclusive plot
-            histos["DYJetsToLL"]->histo1D[index]->Draw("same");
-	    canvasTemp->SaveAs("Hist_" + histoVarName + ".png");
+	    // Debug Verison
+            //histos["DYJetsToLL"]->histo1D[index]->Draw("same");
+            // Full Analysis Version
+            //histos["Data"]->histo1D[index]->Draw("same");
+	    //canvasTemp->SetLogy(true);
+	    leg->Draw();	
+	    canvasTemp->SaveAs("Hist_" + histoVarName + ".png"); // must happen here to include fit
 
 	    // Create canvas with pad for residuals
    	    //gStyle->SetPadBottomMargin(2.0);
 	    TCanvas* canvasFit = new TCanvas("cFit" + histoVarName, "c" + histoVarName, width, height);
 	    TPad *histopad = new TPad("histopad", "histopad",0.0,0.33,1.0,1.0); //xlow,ylow,xup,yup
 	    TPad *residualpad = new TPad("residualpad","residualpad",0.0,0.0,1.0,0.33);
-	    histopad->SetBottomMargin(0.00001);
+	    histopad->SetBottomMargin(0.02);
 	    histopad->SetBorderMode(0);
-	    residualpad->SetTopMargin(0.00001);
+	    residualpad->SetTopMargin(0.02);
 	    residualpad->SetBottomMargin(0.3);
 	    residualpad->SetBorderMode(0);
 	    histopad->Draw();
@@ -172,30 +204,46 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 
 	    // plot the fit, data, and signal
 	    histopad->cd();
+	    //histopad->SetLogy(true);	
+	    //Debug Version
+	    /*
 	    histos["DYJetsToLL"]->histo1D[index]->SetStats(0);
 	    histos["DYJetsToLL"]->histo1D[index]->GetYaxis()->SetTitleSize(0.045);
 	    histos["DYJetsToLL"]->histo1D[index]->GetYaxis()->SetLabelSize(0.04);
 	    histos["DYJetsToLL"]->histo1D[index]->Draw(); // no string in the draw options shows fitted function
+	    */
+	    // Full Analysis Version
+	    histos["Data"]->histo1D[index]->SetStats(1);
+	    histos["Data"]->histo1D[index]->GetYaxis()->SetTitleSize(0.045);
+	    histos["Data"]->histo1D[index]->GetYaxis()->SetLabelSize(0.04);
+	    histos["Data"]->histo1D[index]->Draw("same"); // no string in the draw options shows fitted function
 	    //histos["QstarZm1000"]->histo1D[index]->Draw("hist same");
 	    //histos["QstarZm2000"]->histo1D[index]->Draw("hist same");
 	    //histos["QstarZm5000"]->histo1D[index]->Draw("hist same");	
+	    histopad->Modified(); // can also add histopad->Modified() if statsbox is needed
+	    histopad->Update(); // can also add histopad->Modified() if statsbox is needed
+	    TPaveStats *statsbox = (TPaveStats*)histos["Data"]->histo1D[index]->FindObject("stats");
+	    statsbox->SetY2NDC(0.6);
+	    histopad->Modified(); // can also add histopad->Modified() if statsbox is needed
 	    histopad->Update(); // can also add histopad->Modified() if statsbox is needed
 
 	    std::cout << "Drew Histogram" << std::endl;
 
 	    // plot the residuals
 	    residualpad->cd();
-   	    TH1F* residualHist = new TH1F("ResInverseDiMuPtHist","",100,0,0.008);
+   	    TH1F* residualHist = new TH1F("ResInverseDiMuPtHist","",80,0,0.008);
 	    residualHist->SetFillColor(kBlue-1);
 	    residualHist->SetLineColor(kBlue+1);
-	    residualHist->GetXaxis()->SetTitle("1/P_{T}(#mu#mu) [c/GeV]");
+	    residualHist->GetXaxis()->SetTitle("1/P_{T}(#mu#mu) [GeV^{-1}]");
 	    residualHist->GetXaxis()->SetTitleSize(0.1);
 	    residualHist->GetXaxis()->SetTitleOffset(1.0);
 	    residualHist->GetXaxis()->SetLabelSize(0.09);
-	    residualHist->GetYaxis()->SetTitle("Ratio");
-	    residualHist->GetYaxis()->SetTitleSize(0.1);
+	    residualHist->GetYaxis()->SetTitle("(data-fit)/error");
+	    residualHist->GetYaxis()->SetTitleSize(0.09);
 	    residualHist->GetYaxis()->SetTitleOffset(0.5);
-	    residualHist->GetYaxis()->SetLabelSize(0.09);
+	    residualHist->GetYaxis()->SetLabelSize(0.08);
+	    // Debug version
+	    /*
 	    for(int i = 1; i <= histos["DYJetsToLL"]->histo1D[index]->GetNbinsX(); i++){
 		double res = 0;
 		if(histos["DYJetsToLL"]->histo1D[index]->GetBinError(i) != 0){
@@ -203,6 +251,18 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 		}
 		else if(histos["DYJetsToLL"]->histo1D[index]->GetBinError(i) == 0){
 		    res = histos["DYJetsToLL"]->histo1D[index]->GetBinContent(i) - dyfunc->Eval(histos["DYJetsToLL"]->histo1D[index]->GetBinCenter(i));
+		}
+		residualHist->SetBinContent(i,res);
+	    }
+	    */
+	    // Full analysis version
+	    for(int i = 1; i <= histos["Data"]->histo1D[index]->GetNbinsX(); i++){
+		double res = 0;
+		if(histos["Data"]->histo1D[index]->GetBinError(i) != 0){
+		    res = (histos["Data"]->histo1D[index]->GetBinContent(i) - dyfunc->Eval(histos["Data"]->histo1D[index]->GetBinCenter(i))) / histos["Data"]->histo1D[index]->GetBinError(i);
+		}
+		else if(histos["Data"]->histo1D[index]->GetBinError(i) == 0){
+		    res = histos["Data"]->histo1D[index]->GetBinContent(i) - dyfunc->Eval(histos["Data"]->histo1D[index]->GetBinCenter(i));
 		}
 		residualHist->SetBinContent(i,res);
 	    }
@@ -215,7 +275,9 @@ Plots::Plots(std::map<std::string, Sample*> insample, std::map<std::string, Samp
 	    canvasFit->SaveAs("Hist_Fit" + histoVarName + ".png");   
         } 
 	else if(histoVarName != "inverseDiMuPtHist"){
-	     //histos["Data"]->histo1D[index]->Draw("same");
+	     histos["Data"]->histo1D[index]->Draw("same");
+	     //canvasTemp->SetLogy(true);
+	     leg->Draw("");	
 	     canvasTemp->SaveAs("Hist_" + histoVarName + ".png");
 	}
 
